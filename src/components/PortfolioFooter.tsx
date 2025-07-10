@@ -1,0 +1,20 @@
+const PortfolioFooter = () => {
+  return (
+    <footer className="w-full bg-portfolio-accent py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="flex items-center justify-between text-xs font-light tracking-wider text-accent-foreground uppercase mb-8">
+          <span>NOT CLOSE STUDIO</span>
+          <span>MARC LINCH STONE</span>
+        </div>
+        
+        <div className="text-center">
+          <h2 className="text-6xl md:text-8xl lg:text-9xl font-bold text-accent-foreground font-ibm-plex tracking-tighter leading-none">
+            CHIBUZOR
+          </h2>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default PortfolioFooter;

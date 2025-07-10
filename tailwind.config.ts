@@ -18,6 +18,12 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'ibm-plex': ['IBM Plex Sans', 'sans-serif'],
+				'ibm-plex-mono': ['IBM Plex Mono', 'monospace'],
+				'ibm-plex-condensed': ['IBM Plex Sans Condensed', 'sans-serif'],
+				sans: ['IBM Plex Sans', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +67,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				portfolio: {
+					bg: 'hsl(var(--portfolio-bg))',
+					card: 'hsl(var(--portfolio-card))',
+					text: 'hsl(var(--portfolio-text))',
+					accent: 'hsl(var(--portfolio-accent))',
+					muted: 'hsl(var(--portfolio-muted))',
 				}
 			},
 			borderRadius: {
