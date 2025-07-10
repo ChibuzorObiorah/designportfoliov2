@@ -1,6 +1,18 @@
+import { useState, useEffect } from 'react';
 import PortfolioCard from './PortfolioCard';
 
 const PortfolioGrid = () => {
+  const [showGrid, setShowGrid] = useState(false);
+
+  useEffect(() => {
+    // Show grid after particle animation completes (4 seconds delay)
+    const timer = setTimeout(() => {
+      setShowGrid(true);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const projects = [
     {
       title: "Hypermedia UI",
@@ -47,7 +59,9 @@ const PortfolioGrid = () => {
   ];
 
   return (
-    <section className="w-full px-6 md:px-8 py-12">
+    <section className={`w-full px-6 md:px-8 py-12 transition-all duration-1000 ease-out ${
+      showGrid ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+    }`}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Column */}
