@@ -62,7 +62,7 @@ export default function ParticleHero() {
       ctx.fillStyle = "white"
       ctx.save()
 
-      const textSize = isMobile ? 50 : 100
+      const textSize = isMobile ? 100 : 200 // 2x larger
       ctx.font = `bold ${textSize}px 'IBM Plex Sans', sans-serif`
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
@@ -163,6 +163,7 @@ export default function ParticleHero() {
       const currentTime = Date.now()
       const elapsedTime = (currentTime - animationStartTime) / 1000
 
+      // Set loaded state once particles finish forming (no double loading)
       if (!isLoaded && elapsedTime > 3) {
         setIsLoaded(true)
       }
@@ -261,10 +262,11 @@ export default function ParticleHero() {
     const handleResize = () => {
       updateCanvasSize()
       const newScale = createTextImage()
-      particles = []
-      createInitialParticles(newScale)
-      animationStartTime = Date.now()
-      setIsLoaded(false)
+      // Only reset particles if this is the first time, not on resize
+      if (particles.length === 0) {
+        createInitialParticles(newScale)
+        animationStartTime = Date.now()
+      }
     }
 
     const handleMove = (x: number, y: number) => {
@@ -322,11 +324,6 @@ export default function ParticleHero() {
         className="w-full h-full absolute top-0 left-0 touch-none"
         aria-label="Interactive particle effect with Chibuzor name"
       />
-      {!isLoaded && (
-        <div className="absolute bottom-8 text-center z-10">
-          <p className="font-ibm-plex text-portfolio-muted text-sm animate-pulse">Loading...</p>
-        </div>
-      )}
     </div>
   )
 }
