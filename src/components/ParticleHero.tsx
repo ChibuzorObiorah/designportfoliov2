@@ -8,7 +8,6 @@ export default function ParticleHero() {
   const isTouchingRef = useRef(false)
   const [isMobile, setIsMobile] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isFormationPhase, setIsFormationPhase] = useState(true)
 
   useEffect(() => {
     // Load IBM Plex Sans font to match the portfolio
@@ -47,7 +46,6 @@ export default function ParticleHero() {
       size: number
       color: string
       scatteredColor: string
-      life: number
       vx: number
       vy: number
       isForming: boolean
@@ -126,7 +124,6 @@ export default function ParticleHero() {
             size: Math.random() * 1.5 + 0.5,
             color: "white",
             scatteredColor: "#60ff00",
-            life: Math.random() * 100 + 50,
             vx: 0,
             vy: 0,
             isForming: isInitialLoad,
@@ -294,7 +291,7 @@ export default function ParticleHero() {
       canvas.removeEventListener("touchend", handleTouchEnd)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [isMobile, isLoaded, isFormationPhase])
+  }, [isMobile, isLoaded])
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center">
