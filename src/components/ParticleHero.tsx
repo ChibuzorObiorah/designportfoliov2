@@ -167,7 +167,6 @@ export default function ParticleHero() {
       // Set loaded state once particles finish forming
       if (!isLoaded && elapsedTime > 2.5) {
         setIsLoaded(true)
-        setIsFormationPhase(false) // End formation immediately when loaded
       }
 
       for (let i = 0; i < particles.length; i++) {
@@ -229,31 +228,7 @@ export default function ParticleHero() {
 
         ctx.fillRect(p.x, p.y, p.size, p.size)
 
-        // Only manage particle lifecycle after formation phase
-        if (!p.isForming && !isFormationPhase) {
-          p.life--
-          if (p.life <= 0) {
-            const newParticle = createParticle(scale, false)
-            if (newParticle) {
-              particles[i] = newParticle
-            } else {
-              particles.splice(i, 1)
-              i--
-            }
-          }
-        }
-      }
-
-      // Only replenish particles after formation phase is complete
-      if (isLoaded && !isFormationPhase) {
-        const baseParticleCount = 8000
-        const targetParticleCount = Math.floor(
-          baseParticleCount * Math.sqrt((canvas.width * canvas.height) / (1920 * 1080)),
-        )
-        while (particles.length < targetParticleCount) {
-          const newParticle = createParticle(scale, false)
-          if (newParticle) particles.push(newParticle)
-        }
+        // Removed complex lifecycle management - particles just stay and move naturally
       }
 
       animationFrameId = requestAnimationFrame(() => animate(scale))
