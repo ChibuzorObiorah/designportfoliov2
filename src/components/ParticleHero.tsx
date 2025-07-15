@@ -164,14 +164,10 @@ export default function ParticleHero() {
       const currentTime = Date.now()
       const elapsedTime = (currentTime - animationStartTime) / 1000
 
-      // Set loaded state once particles finish forming (no double loading)
-      if (!isLoaded && elapsedTime > 3) {
+      // Set loaded state once particles finish forming
+      if (!isLoaded && elapsedTime > 2.5) {
         setIsLoaded(true)
-      }
-
-      // Transition from formation phase to maintenance phase after 8 seconds
-      if (isFormationPhase && elapsedTime > 8) {
-        setIsFormationPhase(false)
+        setIsFormationPhase(false) // End formation immediately when loaded
       }
 
       for (let i = 0; i < particles.length; i++) {
