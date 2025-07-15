@@ -8,6 +8,7 @@ export default function ParticleHero() {
   const isTouchingRef = useRef(false)
   const [isMobile, setIsMobile] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isFormationPhase, setIsFormationPhase] = useState(true)
 
   useEffect(() => {
     // Load IBM Plex Sans font to match the portfolio
@@ -168,6 +169,11 @@ export default function ParticleHero() {
         setIsLoaded(true)
       }
 
+      // Transition from formation phase to maintenance phase after 8 seconds
+      if (isFormationPhase && elapsedTime > 8) {
+        setIsFormationPhase(false)
+      }
+
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
 
@@ -227,7 +233,8 @@ export default function ParticleHero() {
 
         ctx.fillRect(p.x, p.y, p.size, p.size)
 
-        if (!p.isForming) {
+        // Only manage particle lifecycle after formation phase
+        if (!p.isForming && !isFormationPhase) {
           p.life--
           if (p.life <= 0) {
             const newParticle = createParticle(scale, false)
@@ -241,7 +248,8 @@ export default function ParticleHero() {
         }
       }
 
-      if (isLoaded) {
+      // Only replenish particles after formation phase is complete
+      if (isLoaded && !isFormationPhase) {
         const baseParticleCount = 8000
         const targetParticleCount = Math.floor(
           baseParticleCount * Math.sqrt((canvas.width * canvas.height) / (1920 * 1080)),
@@ -315,7 +323,7 @@ export default function ParticleHero() {
       canvas.removeEventListener("touchend", handleTouchEnd)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [isMobile, isLoaded])
+  }, [isMobile, isLoaded, isFormationPhase])
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center">
