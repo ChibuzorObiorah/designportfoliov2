@@ -11,8 +11,6 @@ export default function ParticleHero() {
   useEffect(() => {
     // Load Rubik Mono font
     const link = document.createElement("link")
-    link rel="preconnect" href="https://fonts.googleapis.com"
-    link rel="preconnect" href="https://fonts.gstatic.com" crossorigin
     link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
     link.rel = "stylesheet"
     document.head.appendChild(link)
