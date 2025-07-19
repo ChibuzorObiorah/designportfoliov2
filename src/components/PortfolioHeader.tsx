@@ -2,15 +2,24 @@ import { useState, useEffect } from 'react';
 import ParticleHero from './ParticleHero';
 
 const PortfolioHeader = () => {
+  const [showParticles, setShowParticles] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Show content after particle animation dissolves in (1.5 seconds delay)
-    const timer = setTimeout(() => {
+    // Start particle fade-in immediately
+    const particleTimer = setTimeout(() => {
+      setShowParticles(true);
+    }, 200);
+
+    // Show navigation after particles are visible
+    const contentTimer = setTimeout(() => {
       setShowContent(true);
     }, 1500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(particleTimer);
+      clearTimeout(contentTimer);
+    };
   }, []);
 
   return (
@@ -32,7 +41,9 @@ const PortfolioHeader = () => {
       </div>
       
       {/* Particle Animation with dissolve effect */}
-      <div className="absolute inset-0 z-10 animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards', animationDuration: '1.2s' }}>
+      <div className={`absolute inset-0 z-10 transition-opacity duration-1200 ease-out ${
+        showParticles ? 'opacity-100' : 'opacity-0'
+      }`}>
         <ParticleHero />
       </div>
     </header>
