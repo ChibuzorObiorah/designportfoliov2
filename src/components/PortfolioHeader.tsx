@@ -2,15 +2,24 @@ import { useState, useEffect } from 'react';
 import ParticleHero from './ParticleHero';
 
 const PortfolioHeader = () => {
+  const [showParticles, setShowParticles] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Show content after particle animation starts (3.5 seconds delay)
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 3500);
+    // Show particles first (fade in over 2 seconds)
+    const particleTimer = setTimeout(() => {
+      setShowParticles(true);
+    }, 500);
 
-    return () => clearTimeout(timer);
+    // Show content after particles are visible (additional 2 seconds)
+    const contentTimer = setTimeout(() => {
+      setShowContent(true);
+    }, 3000);
+
+    return () => {
+      clearTimeout(particleTimer);
+      clearTimeout(contentTimer);
+    };
   }, []);
 
   return (
@@ -32,7 +41,9 @@ const PortfolioHeader = () => {
       </div>
       
       {/* Particle Animation */}
-      <div className="absolute inset-0 z-10">
+      <div className={`absolute inset-0 z-10 transition-opacity duration-[2000ms] ease-out ${
+        showParticles ? 'opacity-100' : 'opacity-0'
+      }`}>
         <ParticleHero />
       </div>
     </header>
