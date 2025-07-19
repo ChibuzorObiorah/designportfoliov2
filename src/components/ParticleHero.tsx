@@ -57,7 +57,7 @@ export default function ParticleHero() {
       ctx.save()
       
       const textSize = isMobile ? 80 : 160
-      ctx.font = `900 ${textSize}px 'Rubik', sans-serif`
+      ctx.font = `900 ${textSize}px 'Rubik Mono one', monospace`
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
 
