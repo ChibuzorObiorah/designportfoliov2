@@ -5,10 +5,10 @@ const PortfolioGrid = () => {
   const [showGrid, setShowGrid] = useState(false);
 
   useEffect(() => {
-    // Show grid after particle animation completes (4 seconds delay)
+    // Show grid at the same time as navbar (1.5 seconds delay)
     const timer = setTimeout(() => {
       setShowGrid(true);
-    }, 4000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
