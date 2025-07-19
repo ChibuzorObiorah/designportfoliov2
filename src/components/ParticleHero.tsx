@@ -56,7 +56,7 @@ export default function ParticleHero() {
       ctx.fillStyle = "white"
       ctx.save()
       
-      const textSize = isMobile ? 80 : 160
+      const textSize = isMobile ? 50 : 100
       ctx.font = `900 ${textSize}px 'Rubik Mono one', monospace`
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
