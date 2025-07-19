@@ -5,10 +5,10 @@ const PortfolioHeader = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Show content after particle animation starts (3.5 seconds delay)
+    // Show content after particle animation dissolves in (1.5 seconds delay)
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 3500);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -31,8 +31,8 @@ const PortfolioHeader = () => {
         </div>
       </div>
       
-      {/* Particle Animation */}
-      <div className="absolute inset-0 z-10">
+      {/* Particle Animation with dissolve effect */}
+      <div className="absolute inset-0 z-10 animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards', animationDuration: '1.2s' }}>
         <ParticleHero />
       </div>
     </header>
