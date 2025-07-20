@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -24,61 +25,27 @@ export default {
 				'ibm-plex-condensed': ['IBM Plex Sans Condensed', 'sans-serif'],
 				sans: ['IBM Plex Sans', 'sans-serif'],
 			},
-			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
+			fontSize: {
+				'display': ['68px', { lineHeight: '92px', fontWeight: '700' }],
+				'title-1': ['48px', { lineHeight: '100%', fontWeight: '600' }],
+				'title-2': ['36px', { lineHeight: '100%', fontWeight: '600' }],
+				'title-3': ['24px', { lineHeight: '100%', fontWeight: '600' }],
+				'subtitle-1': ['16px', { lineHeight: '100%', fontWeight: '600' }],
+				'body-1': ['14px', { lineHeight: '100%', fontWeight: '400' }],
+				'caption-1': ['14px', { lineHeight: '100%', fontWeight: '600' }],
+				'caption-2': ['12px', { lineHeight: '100%', fontWeight: '500' }],
+			},		
 
-				colors: {
-					'bg-1': '#020b0d',
-					'bg-2': '#242424', 
-					'bg-3': '#404040',
-					'fg-1': '#ffffff',
-					'fg-2': '#bdbdbd',
-					'fg-3': '#707070',
-					'brand': '#fff84c'
-				}
+			colors: {
+				'bg-1': '#020b0d',
+				'bg-2': '#242424', 
+				'bg-3': '#404040',
+				'fg-1': '#ffffff',
+				'fg-2': '#bdbdbd',
+				'fg-3': '#707070',
+				'brand': '#fff84c'
 			},
+
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -108,5 +75,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;

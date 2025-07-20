@@ -23,14 +23,14 @@ const PortfolioCard = ({
     <div className={`bg-colors-bg-2 rounded-lg ${heightClasses[height]} ${className}`}>
       <div className="w-full h-full p-6 flex flex-col justify-end">
         <div className="space-y-2">
-          <h3 className="text-sm font-medium text-colors-fg-1 font-ibm-plex">
+          <h3 className="text-subtitle-1 text-colors-fg-1">
             {title}
           </h3>
-          <p className="text-xs text-colors-fg-2 leading-relaxed font-ibm-plex max-w-xs">
+          <p className="text-body-1 text-colors-fg-2 leading-relaxed max-w-xs">
             {description}
           </p>
           {tags && (
-            <p className="text-xs text-colors-fg-3 font-ibm-plex">
+            <p className="text-caption-1 text-colors-fg-3">
               {tags}
             </p>
           )}

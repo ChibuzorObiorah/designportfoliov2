@@ -8,94 +8,71 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Figma-based color system */
-    --background: 200 100% 2%; /* #020b0d */
-    --foreground: 0 0% 100%; /* #ffffff */
-
-    --card: 0 0% 100%; /* #ffffff */
-    --card-foreground: 200 100% 2%; /* #020b0d */
-
-    --popover: 200 100% 2%; /* #020b0d */
-    --popover-foreground: 0 0% 100%; /* #ffffff */
-
-    --primary: 0 0% 100%; /* #ffffff */
-    --primary-foreground: 200 100% 2%; /* #020b0d */
-
-    --secondary: 0 0% 14%; /* #242424 */
-    --secondary-foreground: 0 0% 100%; /* #ffffff */
-
-    --muted: 0 0% 14%; /* #242424 */
-    --muted-foreground: 0 0% 74%; /* #bdbdbd */
-
-    --accent: 60 100% 65%; /* #fff84c */
-    --accent-foreground: 200 100% 2%; /* #020b0d */
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 25%; /* #404040 */
-    --input: 0 0% 25%; /* #404040 */
-    --ring: 0 0% 100%;
-
     --radius: 0.5rem;
-
-
-
-    --sidebar-background: 200 100% 2%; /* #020b0d */
-    --sidebar-foreground: 0 0% 100%; /* #ffffff */
-    --sidebar-primary: 0 0% 100%; /* #ffffff */
-    --sidebar-primary-foreground: 200 100% 2%; /* #020b0d */
-    --sidebar-accent: 0 0% 14%; /* #242424 */
-    --sidebar-accent-foreground: 0 0% 100%; /* #ffffff */
-    --sidebar-border: 0 0% 25%; /* #404040 */
-    --sidebar-ring: 0 0% 100%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bg-1 text-fg-1;
+  }
+}
+
+/* Typography utility classes based on Figma type ramp */
+@layer components {
+  .text-display {
+    font-size: 68px;
+    line-height: 92px;
+    font-weight: 700;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  }
+  
+  .text-title-1 {
+    font-size: 48px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  }
+  
+  .text-title-2 {
+    font-size: 36px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  }
+  
+  .text-title-3 {
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  }
+  
+  .text-subtitle-1 {
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  }
+  
+  .text-body-1 {
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  
+  .text-caption-1 {
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  
+  .text-caption-2 {
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
   }
 }
