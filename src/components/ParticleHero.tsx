@@ -88,7 +88,7 @@ export default function ParticleHero() {
             baseY: y,
             size: Math.random() * 1 + 0.5,
             color: "white",
-            scatteredColor: "#60ff00",
+            scatteredColor: "#fff84c",
             life: Math.random() * 100 + 50
           }
         }
@@ -111,7 +111,7 @@ export default function ParticleHero() {
     function animate(scale: number) {
       if (!ctx || !canvas) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.fillStyle = "hsl(220, 13%, 9%)"
+      ctx.fillStyle = "#020b0d"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       const { x: mouseX, y: mouseY } = mousePositionRef.current

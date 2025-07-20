@@ -30,10 +30,10 @@ const PortfolioHeader = () => {
       }`}>
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
-            <div className="text-xs font-light tracking-wider text-portfolio-muted uppercase">
+            <div className="text-xs font-light tracking-wider text-colors-fg-2 uppercase">
               CRIB
             </div>
-            <div className="text-xs font-light tracking-wider text-portfolio-muted uppercase">
+            <div className="text-xs font-light tracking-wider text-colors-fg-2 uppercase">
               PORTFOLIO
             </div>
           </div>

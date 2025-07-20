@@ -4,7 +4,7 @@ import PortfolioFooter from '@/components/PortfolioFooter';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-portfolio-bg font-ibm-plex">
+    <div className="min-h-screen bg-colors-bg-1 font-ibm-plex">
       <PortfolioHeader />
       <PortfolioGrid />
       <PortfolioFooter />

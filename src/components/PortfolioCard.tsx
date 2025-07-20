@@ -20,17 +20,17 @@ const PortfolioCard = ({
   };
 
   return (
-    <div className={`bg-portfolio-card rounded-lg ${heightClasses[height]} ${className}`}>
+    <div className={`bg-colors-bg-2 rounded-lg ${heightClasses[height]} ${className}`}>
       <div className="w-full h-full p-6 flex flex-col justify-end">
         <div className="space-y-2">
-          <h3 className="text-sm font-medium text-card-foreground font-ibm-plex">
+          <h3 className="text-sm font-medium text-colors-fg-1 font-ibm-plex">
             {title}
           </h3>
-          <p className="text-xs text-card-foreground/70 leading-relaxed font-ibm-plex max-w-xs">
+          <p className="text-xs text-colors-fg-2 leading-relaxed font-ibm-plex max-w-xs">
             {description}
           </p>
           {tags && (
-            <p className="text-xs text-card-foreground/50 font-ibm-plex">
+            <p className="text-xs text-colors-fg-3 font-ibm-plex">
               {tags}
             </p>
           )}

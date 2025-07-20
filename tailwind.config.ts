@@ -68,12 +68,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				portfolio: {
-					bg: 'hsl(var(--portfolio-bg))',
-					card: 'hsl(var(--portfolio-card))',
-					text: 'hsl(var(--portfolio-text))',
-					accent: 'hsl(var(--portfolio-accent))',
-					muted: 'hsl(var(--portfolio-muted))',
+
+				colors: {
+					'bg-1': '#020b0d',
+					'bg-2': '#242424', 
+					'bg-3': '#404040',
+					'fg-1': '#ffffff',
+					'fg-2': '#bdbdbd',
+					'fg-3': '#707070',
+					'brand': '#fff84c'
 				}
 			},
 			borderRadius: {
