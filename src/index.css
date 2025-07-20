@@ -75,4 +75,12 @@ All colors MUST be HSL.
     font-weight: 500;
     font-family: 'IBM Plex Mono', monospace;
   }
+  
+  .text-logo {
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: -0.48px;
+  }
 }

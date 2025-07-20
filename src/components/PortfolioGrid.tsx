@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import PortfolioCard from './PortfolioCard';
+import WorkCard from './WorkCard';
 
 const PortfolioGrid = () => {
   const [showGrid, setShowGrid] = useState(false);
@@ -15,68 +15,88 @@ const PortfolioGrid = () => {
 
   const projects = [
     {
-      title: "Hypermedia UI",
-      description: "A dynamic interface system built with modern web technologies. Focusing on responsive design and user interaction patterns.",
-      tags: "React, TypeScript",
-      height: "medium" as const
+      title: "Shortcutter.io",
+      description: "Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API",
+      imageSrc: "/placeholder.svg",
+      caseStudy: false
     },
     {
-      title: "Visuals",
-      description: "Creative direction and visual design for various digital projects. Emphasizing clean aesthetics and brand consistency.",
-      tags: "Design, Branding",
-      height: "small" as const
+      title: "Visualis",
+      description: "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
+      imageSrc: "/placeholder.svg",
+      caseStudy: false
     },
     {
-      title: "Upgrade to Designer",
-      description: "A comprehensive design system and toolkit for modern web applications. Built with scalability and accessibility in mind.",
-      tags: "Design System, UI/UX",
-      height: "large" as const
+      title: "Upscale in Designer",
+      description: "AI-powered image enhancement tool in one click - resulted in high engagement with users",
+      imageSrc: "/placeholder.svg",
+      caseStudy: true
     },
     {
-      title: "UI5 Items in Codebase",
-      description: "Implementation of UI5 components within existing codebase architecture. Focusing on seamless integration and performance.",
-      tags: "UI5, Integration",
-      height: "small" as const
+      title: "iOS Home in OneNote",
+      description: "Making it easy for users to capture and retrieve notes faster",
+      imageSrc: "/placeholder.svg",
+      caseStudy: true
     },
     {
-      title: "Capital on Canvas",
-      description: "Digital art platform connecting artists with collectors. Built with focus on user experience and marketplace functionality.",
-      tags: "Web App, E-commerce",
-      height: "medium" as const
+      title: "Copilot on Canvas",
+      description: "Integrated AI features in OneNote canvas",
+      imageSrc: "/placeholder.svg",
+      caseStudy: true
     },
     {
-      title: "Contact to Continue",
-      description: "Communication platform designed for seamless collaboration. Emphasizing real-time features and user engagement.",
-      tags: "Communication, Real-time",
-      height: "small" as const
+      title: "Copilot in OneNote",
+      description: "Helping users understand the scope of LLMs in OneNote",
+      imageSrc: "/placeholder.svg",
+      caseStudy: true
     },
     {
-      title: "Capital on Canvas",
-      description: "Extended features and mobile optimization for the digital art marketplace. Enhanced user experience across all devices.",
-      tags: "Mobile, UX",
-      height: "medium" as const
+      title: "Copilot on Canvas",
+      description: "Integrated AI features in OneNote canvas",
+      imageSrc: "/placeholder.svg",
+      caseStudy: true
     }
   ];
 
   return (
-    <section className={`w-full px-6 md:px-8 py-12 transition-all duration-1000 ease-out ${
+    <section className={`w-full px-[60px] py-20 transition-all duration-1000 ease-out ${
       showGrid ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
     }`}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Left Column */}
-          <div className="space-y-6 lg:space-y-8">
-            <PortfolioCard {...projects[0]} />
-            <PortfolioCard {...projects[3]} />
-            <PortfolioCard {...projects[5]} />
+        {/* Row 1: 2 WorkCards */}
+        <div className="flex flex-col lg:flex-row gap-16 pb-16">
+          <div className="flex-1">
+            <WorkCard {...projects[0]} />
           </div>
-          
-          {/* Right Column */}
-          <div className="space-y-6 lg:space-y-8">
-            <PortfolioCard {...projects[1]} />
-            <PortfolioCard {...projects[2]} />
-            <PortfolioCard {...projects[4]} />
-            <PortfolioCard {...projects[6]} />
+          <div className="flex-1">
+            <WorkCard {...projects[1]} />
+          </div>
+        </div>
+
+        {/* Row 2: 1 WorkCard (full width) */}
+        <div className="flex gap-16 pb-16">
+          <div className="w-full">
+            <WorkCard {...projects[2]} />
+          </div>
+        </div>
+
+        {/* Row 3: 2 WorkCards */}
+        <div className="flex flex-col lg:flex-row gap-16 pb-16">
+          <div className="flex-1">
+            <WorkCard {...projects[3]} />
+          </div>
+          <div className="flex-1">
+            <WorkCard {...projects[4]} />
+          </div>
+        </div>
+
+        {/* Row 4: 2 WorkCards */}
+        <div className="flex flex-col lg:flex-row gap-16 pb-16">
+          <div className="flex-1">
+            <WorkCard {...projects[5]} />
+          </div>
+          <div className="flex-1">
+            <WorkCard {...projects[6]} />
           </div>
         </div>
       </div>
