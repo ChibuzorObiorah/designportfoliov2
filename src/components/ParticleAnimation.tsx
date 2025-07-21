@@ -204,13 +204,7 @@ export default function ParticleAnimation() {
     <div className="relative w-full h-full overflow-hidden">
       <canvas
         ref={canvasRef}
-        className="absolute touch-none"
-        style={{
-          width: 'calc(100% + 200px)',
-          height: 'calc(100% + 200px)',
-          top: '-100px',
-          left: '-100px'
-        }}
+        className="particle-canvas"
         aria-label="Interactive particle animation"
       />
     </div>
