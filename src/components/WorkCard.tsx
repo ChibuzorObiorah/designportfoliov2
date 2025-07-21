@@ -20,7 +20,7 @@ export function WorkCard({
   return (
     <div
       className={cn(
-        "flex flex-col gap-6 items-start justify-start w-full min-h-96",
+        "flex flex-col gap-6 items-start justify-start w-full min-h-[36rem]",
         className
       )}
     >
