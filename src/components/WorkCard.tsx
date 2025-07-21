@@ -25,12 +25,12 @@ export function WorkCard({
       )}
     >
       {/* Video thumbnail */}
-      <div className="w-full flex-1 bg-bg-2 rounded-xl overflow-hidden">
+      <div className="w-full flex-1 h-full rounded-xl overflow-hidden">
         {videoSrc ? (
           <video 
             src={videoSrc} 
             aria-label={videoAlt}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
             autoPlay
             loop
             muted
