@@ -20,12 +20,12 @@ export function WorkCard({
   return (
     <div
       className={cn(
-        "flex flex-col gap-6 items-start justify-start w-full h-[600px]",
+        "flex flex-col gap-6 items-start justify-start w-full min-h-[36rem]",
         className
       )}
     >
       {/* Video thumbnail */}
-      <div className="w-full h-full flex-1 bg-bg-2 rounded-xl overflow-hidden">
+      <div className="w-full flex-1 bg-bg-2 rounded-xl overflow-hidden">
         {videoSrc ? (
           <video 
             src={videoSrc} 
@@ -36,10 +36,6 @@ export function WorkCard({
             muted
             playsInline
           />
-        ) : (
-          <div className="w-full h-full bg-bg-2 flex items-center justify-center">
-            <span className="text-fg-3 text-body-1">Video placeholder</span>
-          </div>
         )}
       </div>
 
