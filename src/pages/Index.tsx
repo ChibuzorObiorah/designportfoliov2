@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import ParticleHero from '@/components/ParticleHero';
-import PortfolioGrid from '@/components/PortfolioGrid';
-import PortfolioFooter from '@/components/PortfolioFooter';
+import WorkGrid from '@/components/WorkGrid';
+import Footer from '@/components/Footer';
 import { useState, useEffect } from 'react';
 
 const Index = () => {
@@ -44,8 +44,8 @@ const Index = () => {
         </div>
       </section>
 
-      <PortfolioGrid />
-      <PortfolioFooter />
+      <WorkGrid />
+      <Footer />
     </div>
   );
 };

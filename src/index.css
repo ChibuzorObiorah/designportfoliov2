@@ -57,7 +57,7 @@ All colors MUST be HSL.
   
   .text-body-1 {
     font-size: 14px;
-    line-height: 100%;
+    line-height: 150%;
     font-weight: 400;
     font-family: 'IBM Plex Sans', sans-serif;
   }

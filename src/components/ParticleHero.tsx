@@ -7,20 +7,6 @@ export default function ParticleHero() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    // Load Rubik Mono font
-    const link = document.createElement("link")
-    link.href = "https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
-    link.rel = "stylesheet"
-    document.head.appendChild(link)
-
-    return () => {
-      if (document.head.contains(link)) {
-        document.head.removeChild(link)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
 

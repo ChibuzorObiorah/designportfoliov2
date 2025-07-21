@@ -31,7 +31,7 @@ export default {
 				'title-2': ['36px', { lineHeight: '100%', fontWeight: '600' }],
 				'title-3': ['24px', { lineHeight: '100%', fontWeight: '600' }],
 				'subtitle-1': ['16px', { lineHeight: '100%', fontWeight: '600' }],
-				'body-1': ['14px', { lineHeight: '100%', fontWeight: '400' }],
+				'body-1': ['14px', { lineHeight: '150%', fontWeight: '400' }],
 				'caption-1': ['14px', { lineHeight: '100%', fontWeight: '600' }],
 				'caption-2': ['12px', { lineHeight: '100%', fontWeight: '500' }],
 			},		
