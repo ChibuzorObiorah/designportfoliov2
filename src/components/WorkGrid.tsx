@@ -21,9 +21,9 @@ const PortfolioGrid = () => {
       caseStudy: false
     },
     {
-      title: "Visualis",
-      description: "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
-      videoSrc: "/videos/placeholder.mp4",
+      title: "Tidy up for OneNote Canvas",
+      description: "Integrated AI features in OneNote canvas",
+      videoSrc: "/videos/copilotcanvas/tidyup_prototype.mp4",
       caseStudy: false
     },
     {
@@ -33,33 +33,33 @@ const PortfolioGrid = () => {
       caseStudy: false
     },
     {
-      title: "iOS Home in OneNote",
-      description: "Making it easy for users to capture and retrieve notes faster",
-      videoSrc: "/videos/ioshome/placeholder.mp4",
-      caseStudy: false
-    },
-    {
-      title: "Tidy up for OneNote Canvas",
-      description: "Integrated AI features in OneNote canvas",
-      videoSrc: "/videos/copilotcanvas/tidyup_prototype.mp4",
-      caseStudy: false
-    },
-    {
-      title: "Copilot in OneNote",
+      title: "Copilot Scoping in OneNote",
       description: "Helping users understand the scope of LLMs in OneNote",
-      videoSrc: "/videos/placeholder.mp4",
+      videoSrc: "/videos/copilotscoping/scopingUI.mp4",
       caseStudy: false
     },
     {
       title: "Copilot on Canvas",
       description: "Integrated AI features in OneNote canvas",
+      videoSrc: "/videos/copilotcanvas/rewrite_prototype.mp4",
+      caseStudy: false
+    },
+    {
+      title: "Visualis",
+      description: "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
       videoSrc: "/videos/placeholder.mp4",
-      caseStudy: true
+      caseStudy: false
+    },
+    {
+      title: "iOS Home in OneNote",
+      description: "Making it easy for users to capture and retrieve notes faster",
+      videoSrc: "/videos/ioshome/placeholder.mp4",
+      caseStudy: false
     },
   ];
 
   return (
-    <section className={`w-full px-[60px] py-20 transition-all duration-1000 ease-out ${
+    <section className={`w-full px-20 py-6 transition-all duration-1000 ease-out ${
       showGrid ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
     }`}>
       <div className="max-w-7xl mx-auto">
@@ -91,14 +91,14 @@ const PortfolioGrid = () => {
         </div>
 
         {/* Row 4: 2 WorkCards */}
-        <div className="flex flex-col lg:flex-row gap-16 pb-16">
+        {/* <div className="flex flex-col lg:flex-row gap-16 pb-16">
           <div className="flex-1">
             <WorkCard {...projects[5]} />
           </div>
           <div className="flex-1">
             <WorkCard {...projects[6]} />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

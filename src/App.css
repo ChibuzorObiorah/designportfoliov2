@@ -49,3 +49,24 @@
   position: absolute;
   touch-action: none;
 }
+
+.chart-legend-color {
+  height: 0.5rem;
+  width: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+.chart-legend-color[data-legend-color] {
+  background-color: attr(data-legend-color color, #000);
+}
+
+.chart-tooltip-indicator {
+  border-radius: 2px;
+  border-style: solid;
+}
+.chart-tooltip-indicator[data-bg] {
+  background-color: attr(data-bg color, #000);
+}
+.chart-tooltip-indicator[data-border] {
+  border-color: attr(data-border color, #000);
+}
