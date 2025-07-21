@@ -26,7 +26,7 @@ export function WorkCard({
     >
       {/* Video thumbnail */}
       <div className="w-full flex-1 bg-bg-2 rounded-xl overflow-hidden">
-        {videoSrc ? (
+        {videoSrc && (
           <video 
             src={videoSrc} 
             aria-label={videoAlt}
