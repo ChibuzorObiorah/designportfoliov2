@@ -25,7 +25,7 @@ export function WorkCard({
       )}
     >
       {/* Video thumbnail */}
-      <div className="w-full aspect-video bg-bg-2 rounded-2xl overflow-hidden">
+      <div className="w-full flex-1 bg-bg-2 rounded-2xl overflow-hidden">
         {videoSrc ? (
           <video 
             src={videoSrc} 
