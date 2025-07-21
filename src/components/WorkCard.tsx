@@ -30,7 +30,7 @@ export function WorkCard({
           <video 
             src={videoSrc} 
             aria-label={videoAlt}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
             autoPlay
             loop
             muted
