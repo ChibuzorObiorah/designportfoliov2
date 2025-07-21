@@ -3,7 +3,7 @@ import ParticleAnimation from './ParticleAnimation.tsx';
 
 const Footer = () => {
   return (
-    <div className="bg-bg-1 flex flex-col gap-[120px] items-center justify-end p-0 relative w-full min-h-screen">
+    <div className="bg-bg-1 flex flex-col gap-[120px] items-center justify-end p-0 relative w-full">
       {/* Footer Menu */}
       <div className="relative rounded-2xl shrink-0 w-full">
         <div className="flex flex-row items-center overflow-clip relative w-full">
