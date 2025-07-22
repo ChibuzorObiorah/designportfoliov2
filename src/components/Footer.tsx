@@ -7,7 +7,7 @@ const Footer = () => {
       {/* Footer Menu */}
       <div className="relative rounded-2xl shrink-0 w-full">
         <div className="flex flex-row items-center overflow-clip relative w-full">
-          <div className="flex flex-row items-center justify-between px-20 py-6 relative w-full">
+          <div className="flex flex-row items-center justify-between px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-6 relative w-full mx-auto">
             {/* Left side - Copyright */}
             <div className="flex flex-row gap-4 items-center justify-start p-0 relative shrink-0">
               <div className="font-ibm-plex-mono font-semibold leading-[0] relative text-fg-1 text-[14px] text-left text-nowrap tracking-[-0.28px]">

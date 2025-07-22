@@ -20,7 +20,7 @@ export function WorkCard({
   return (
     <div
       className={cn(
-        "flex flex-col gap-6 items-start justify-start w-full min-h-[36rem]",
+        "flex flex-col gap-6 items-start justify-start w-full",
         className
       )}
     >
@@ -30,7 +30,7 @@ export function WorkCard({
           <video 
             src={videoSrc} 
             aria-label={videoAlt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transform scale-105"
             autoPlay
             loop
             muted

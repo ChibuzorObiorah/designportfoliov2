@@ -53,7 +53,7 @@ const Navbar = ({ state = "Rest" }: NavbarProps) => {
     return (
       <div className="bg-[rgba(26,26,26,0.2)] backdrop-blur-sm relative rounded-2xl w-full transition-all duration-300">
         <div className="flex flex-row items-center relative w-full">
-          <div className="flex flex-row items-center justify-between px-20 py-6 relative w-full max-w-7xl mx-auto">
+          <div className="flex flex-row items-center justify-between px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-6 relative w-full mx-auto">
             {logo}
             {menuItems}
           </div>
@@ -65,7 +65,7 @@ const Navbar = ({ state = "Rest" }: NavbarProps) => {
   return (
     <div className="bg-black relative w-full transition-all duration-300">
       <div className="flex flex-row items-center relative w-full">
-        <div className="flex flex-row items-center justify-between px-20 py-6 relative w-full max-w-7xl mx-auto">
+        <div className="flex flex-row items-center justify-between px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-6 relative w-full mx-auto">
           {logo}
           {menuItems}
         </div>

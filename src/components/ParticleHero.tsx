@@ -5,8 +5,28 @@ export default function ParticleHero() {
   const mousePositionRef = useRef({ x: 0, y: 0 })
   const isTouchingRef = useRef(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [fontLoaded, setFontLoaded] = useState(false)
 
   useEffect(() => {
+    // Wait for the font to load before running the canvas logic
+    let isMounted = true
+    async function loadFontAndStart() {
+      // Wait for the font to be loaded
+      try {
+        await document.fonts.load("900 100px 'Rubik Mono One'")
+        await document.fonts.ready
+        if (isMounted) setFontLoaded(true)
+      } catch (e) {
+        // If font loading fails, still proceed
+        if (isMounted) setFontLoaded(true)
+      }
+    }
+    loadFontAndStart()
+    return () => { isMounted = false }
+  }, [])
+
+  useEffect(() => {
+    if (!fontLoaded) return
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -41,7 +61,7 @@ export default function ParticleHero() {
       ctx.save()
       
       const textSize = isMobile ? 50 : 100
-      ctx.font = `900 ${textSize}px 'Rubik Mono one', monospace`
+      ctx.font = `900 ${textSize}px 'Rubik Mono One', monospace`
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
 
@@ -208,7 +228,7 @@ export default function ParticleHero() {
       }
       cancelAnimationFrame(animationFrameId)
     }
-  }, [isMobile])
+  }, [isMobile, fontLoaded])
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center">
