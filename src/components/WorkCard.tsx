@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 interface WorkCardProps {
   caseStudy?: boolean;
@@ -7,58 +8,81 @@ interface WorkCardProps {
   videoSrc?: string;
   videoAlt?: string;
   className?: string;
+  caseStudyLink?: string;
 }
 
-export function WorkCard({ 
-  caseStudy = true, 
+export function WorkCard({
+  caseStudy = true,
   title = "Upscale in Designer",
   description = "Insert short description for the project",
   videoSrc,
   videoAlt = "Project video thumbnail",
-  className 
+  className,
+  caseStudyLink,
 }: WorkCardProps) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    if (caseStudy && caseStudyLink) {
+      navigate(caseStudyLink);
+    }
+  };
+
   return (
     <div
       className={cn(
-        "flex flex-col gap-6 items-start justify-start w-full",
-        className
+        "group relative w-full rounded-xl overflow-hidden cursor-pointer",
+        className,
       )}
+      onClick={handleCardClick}
+      data-oid="4pmrqey"
     >
       {/* Video thumbnail */}
-      <div className="w-full flex-1 bg-bg-2 rounded-xl overflow-hidden">
+      <div
+        className="w-full h-full bg-bg-2 rounded-xl overflow-hidden"
+        data-oid="bt_-q3p"
+      >
         {videoSrc && (
-          <video 
-            src={videoSrc} 
+          <video
+            src={videoSrc}
             aria-label={videoAlt}
-            className="w-full h-full object-cover transform scale-105"
+            className="w-full h-full object-cover transform scale-105 group-hover:blur-sm transition-all duration-300"
             autoPlay
             loop
             muted
             playsInline
+            data-oid="ny_c509"
           />
         )}
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col gap-3 items-start justify-start w-full">
+      {/* Dark overlay - only visible on hover */}
+      <div className="absolute inset-0 bg-bg-1 opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-xl" />
+
+      {/* Content - only visible on hover */}
+      <div
+        className="absolute inset-0 flex flex-col gap-3 items-start justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        data-oid="wp2aqee"
+      >
         {/* Labeling */}
-        <div className="flex flex-col gap-2 items-start justify-start w-full">
-          <h3 className="font-ibm-plex-condensed text-title-3 text-fg-1 tracking-[-0.48px]">
+        <div
+          className="flex flex-col gap-2 items-start justify-start w-full"
+          data-oid="k435fmj"
+        >
+          <h3
+            className="font-ibm-plex-condensed text-title-3 text-fg-1 tracking-[-0.48px]"
+            data-oid="v95s856"
+          >
             {title}
           </h3>
-          <p className="font-ibm-plex text-body-1 text-fg-1 max-w-[470px]">
+          <p
+            className="font-ibm-plex text-body-1 text-fg-1 max-w-[470px]"
+            data-oid="3mog6u3"
+          >
             {description}
           </p>
         </div>
 
-        {/* Button - only show if caseStudy is true */}
-        {caseStudy && (
-          <button className="flex flex-row gap-2 items-center justify-center px-4 py-2 rounded-lg bg-bg-2 hover:bg-bg-3 transition-colors">
-            <span className="font-ibm-plex-mono text-caption-1 text-fg-1 tracking-[-0.28px]">
-              VIEW CASE STUDY
-            </span>
-          </button>
-        )}
       </div>
     </div>
   );
