@@ -39,7 +39,7 @@ const projects = [
     title: "Visualis",
     description:
       "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
-    videoSrc: "/videos/placeholder.mp4",
+    videoSrc: "/videos/visualis/visualis-prototype.mp4",
     caseStudy: false,
   },
   {
@@ -53,9 +53,10 @@ const projects = [
 
 // Define the grid layout: each sub-array is a row, containing indices of projects
 const gridLayout = [
-  [0, 1], // Row 1: two cards
-  [2], // Row 2: one card
-  [3, 4], // Row 3: two cards    // Row 4: two cards (uncommented for more content)
+  [0, 1],
+  [4],
+  [3, 1], 
+  [5],
 ];
 
 const PortfolioGrid = () => {
