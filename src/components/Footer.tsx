@@ -1,82 +1,77 @@
 import React from "react";
+import "../styles/textured-footer.css";
+
+// Textured Footer Component - Using provided image
+const TexturedFooter = () => {
+  return (
+    <div 
+      className="relative w-full h-[265px] overflow-hidden"
+      data-name="Textured-footer"
+    >
+      {/* Image-based textured background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/footer-img/textured-footer.png')"
+        }}
+        data-name="Texture-img"
+      />
+    </div>
+  );
+};
 
 const Footer = () => {
   return (
     <div
-      className="bg-bg-1 flex flex-col gap-[120px] items-center justify-end p-0 pb-16 relative w-full"
-      data-oid="2tqniux"
+      className="bg-bg-1 flex flex-col gap-[24px] items-start relative w-full pt-[80px]"
+      data-name="Footer"
     >
-      {/* Footer Menu */}
-      <div className="relative rounded-2xl shrink-0 w-full" data-oid="2ycomwv">
+      {/* Footer Menu Container */}
+      <div 
+        className="flex items-center justify-between px-[20px] sm:px-[40px] md:px-[60px] lg:px-[80px] py-[24px] rounded-[16px] w-full"
+        data-name="Footermenu"
+      >
+        {/* Left side - Copyright */}
         <div
-          className="flex flex-row items-center overflow-clip relative w-full"
-          data-oid="kdu.my."
+          className="flex gap-[16px] items-center"
+          data-name="Menu-Items"
         >
           <div
-            className="flex flex-row items-center justify-between px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-6 relative w-full mx-auto"
-            data-oid="1ziaeu9"
+            className="font-ibm-plex-mono font-semibold leading-[0] text-fg-2 text-[12px] sm:text-[14px] text-nowrap tracking-[-0.28px]"
           >
-            {/* Left side - Copyright */}
-            <div
-              className="flex flex-row gap-4 items-center justify-start p-0 relative shrink-0"
-              data-oid="q6dl-jv"
-            >
-              <div
-                className="font-ibm-plex-mono font-semibold leading-[0] relative text-fg-2 text-[14px] text-left text-nowrap tracking-[-0.28px]"
-                data-oid="cx2h:_c"
-              >
-                <p
-                  className="block leading-[normal] whitespace-pre"
-                  data-oid="3amqhsb"
-                >
-                  2025 CHIBUZOR OBIORAH
-                </p>
-              </div>
-            </div>
+            <p className="leading-[normal] whitespace-pre">
+              2025 CHIBUZOR OBIORAH
+            </p>
+          </div>
+        </div>
 
-            {/* Right side - Menu Items */}
-            <div
-              className="flex flex-row font-ibm-plex-mono font-semibold gap-4 items-center justify-start leading-[0] relative text-fg-2 text-[14px] text-left text-nowrap tracking-[-0.28px]"
-              data-oid="s01icti"
-            >
-              <div
-                className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
-                data-oid="oxt2c7m"
-              >
-                <p
-                  className="block leading-[normal] text-nowrap whitespace-pre"
-                  data-oid="lw49szy"
-                >
-                  ABOUT
-                </p>
-              </div>
-              <div
-                className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
-                data-oid="2x:0wqi"
-              >
-                <p
-                  className="block leading-[normal] text-nowrap whitespace-pre"
-                  data-oid="4fm-:1-"
-                >
-                  LINKEDIN
-                </p>
-              </div>
-              <div
-                className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
-                data-oid="2sh3my_"
-              >
-                <p
-                  className="block leading-[normal] text-nowrap whitespace-pre"
-                  data-oid="o6-k2oe"
-                >
-                  RESUME
-                </p>
-              </div>
-            </div>
+        {/* Right side - Menu Items */}
+        <div
+          className="flex font-ibm-plex-mono font-semibold gap-[8px] sm:gap-[12px] md:gap-[16px] items-center leading-[0] text-fg-2 text-[12px] sm:text-[14px] text-nowrap tracking-[-0.28px]"
+          data-name="Menu-Items"
+        >
+          <div className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+            <p className="leading-[normal] text-nowrap whitespace-pre">
+              ABOUT
+            </p>
+          </div>
+          <div className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+            <p className="leading-[normal] text-nowrap whitespace-pre">
+              LINKEDIN
+            </p>
+          </div>
+          <div className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+            <p className="leading-[normal] text-nowrap whitespace-pre">
+              RESUME
+            </p>
           </div>
         </div>
       </div>
 
+      {/* Textured Footer Section */}
+      <div className="w-full">
+        <TexturedFooter />
+      </div>
     </div>
   );
 };

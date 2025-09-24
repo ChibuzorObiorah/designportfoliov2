@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import CaseStudy from "./pages/CaseStudy";
 import NotFound from "./pages/NotFound";
 import CopilotContext from "./pages/CopilotContext";
 
@@ -73,6 +74,11 @@ const App = () => {
                 <Route
                   path="/about"
                   element={<About />}
+                />
+
+                <Route
+                  path="/case-study"
+                  element={<CaseStudy />}
                 />
 
                 <Route

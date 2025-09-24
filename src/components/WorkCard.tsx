@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
 
 interface WorkCardProps {
-  caseStudy?: boolean;
   title?: string;
   description?: string;
   videoSrc?: string;
@@ -12,7 +11,6 @@ interface WorkCardProps {
 }
 
 export function WorkCard({
-  caseStudy = true,
   title = "Upscale in Designer",
   description = "Insert short description for the project",
   videoSrc,
@@ -23,7 +21,7 @@ export function WorkCard({
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    if (caseStudy && caseStudyLink) {
+    if (caseStudyLink) {
       navigate(caseStudyLink);
     }
   };
