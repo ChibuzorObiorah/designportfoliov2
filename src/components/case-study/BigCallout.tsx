@@ -11,8 +11,8 @@ const BigCallout: React.FC<BigCalloutProps> = ({
 }) => {
   return (
     <div className={`flex items-center justify-start px-0 py-8 relative w-full ${className}`}>
-      <div className="font-['IBM_Plex_Sans_Condensed'] font-semibold text-[36px] text-fg-1 w-full text-left">
-        <p className="leading-[48px] break-words">{text}</p>
+      <div className="text-title-2 text-fg-1 w-full text-left">
+        <p className="break-words">{text}</p>
       </div>
     </div>
   );

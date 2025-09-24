@@ -7,6 +7,8 @@ interface ImageContainerProps {
   height?: string;
   className?: string;
   showCaption?: boolean;
+  fit?: 'cover' | 'contain';
+  adaptToImage?: boolean;
 }
 
 const ImageContainer: React.FC<ImageContainerProps> = ({
@@ -15,17 +17,27 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
   caption = 'IMAGE CAPTION',
   height = '600px',
   className = '',
-  showCaption = true
+  showCaption = true,
+  fit = 'cover',
+  adaptToImage = false
 }) => {
   return (
     <div className={`flex flex-col gap-2 items-center justify-center py-6 w-full ${className}`}>
-      <div 
-        className={`bg-center bg-cover bg-no-repeat rounded-[16px] w-full ${src ? 'bg-transparent' : 'bg-bg-2'}`}
-        style={{ 
-          height,
-          backgroundImage: src ? `url('${src}')` : undefined
-        }}
-      />
+      {adaptToImage && src ? (
+        <img 
+          src={src}
+          alt={alt}
+          className="rounded-[16px] w-full h-auto object-contain"
+        />
+      ) : (
+        <div 
+          className={`bg-center ${fit === 'cover' ? 'bg-cover' : 'bg-contain'} bg-no-repeat rounded-[16px] w-full ${src ? 'bg-transparent' : 'bg-bg-2'}`}
+          style={{ 
+            height,
+            backgroundImage: src ? `url('${src}')` : undefined
+          }}
+        />
+      )}
       {showCaption && (
         <div className="flex gap-2 items-center justify-center py-3 w-full">
           <div className="font-['IBM_Plex_Mono'] font-medium text-fg-2 text-[12px] tracking-[-0.24px] uppercase">

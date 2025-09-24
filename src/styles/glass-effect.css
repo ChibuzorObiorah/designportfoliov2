@@ -136,6 +136,13 @@
   transform: translateX(100%);
 }
 
+/* Hide the sliding indicator when no tab is selected */
+.glass-toggle[data-selected="null"]::after,
+.glass-toggle:not([data-selected])::after {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
 /* Animation keyframes */
 @keyframes scaleToggle {
   0% { transform: scale(1); }

@@ -21,10 +21,11 @@ All colors MUST be HSL.
 /* Typography utility classes based on Figma type ramp */
 @layer components {
   .text-display {
-    font-size: 68px;
-    line-height: 92px;
-    font-weight: 700;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 68px !important;
+    line-height: 92px !important;
+    font-weight: 700 !important;
+    letter-spacing: -2px !important;
+    font-family: 'IBM Plex Sans Condensed', sans-serif !important;
   }
   
   .text-title-1 {
@@ -35,17 +36,18 @@ All colors MUST be HSL.
   }
   
   .text-title-2 {
-    font-size: 36px;
-    line-height: 100%;
-    font-weight: 600;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 36px !important;
+    line-height: 48px !important;
+    font-weight: 600 !important;
+    font-family: 'IBM Plex Sans Condensed', sans-serif !important;
   }
   
   .text-title-3 {
-    font-size: 24px;
-    line-height: 100%;
-    font-weight: 600;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 24px !important;
+    line-height: 32px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.48px !important;
+    font-family: 'IBM Plex Sans Condensed', sans-serif !important;
   }
   
   .text-subtitle-1 {
@@ -56,10 +58,11 @@ All colors MUST be HSL.
   }
   
   .text-body-1 {
-    font-size: 14px;
-    line-height: 150%;
-    font-weight: 400;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.32px !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
   }
   
   .text-caption-1 {
@@ -70,10 +73,11 @@ All colors MUST be HSL.
   }
   
   .text-caption-2 {
-    font-size: 12px;
-    line-height: 100%;
-    font-weight: 500;
-    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.24px !important;
+    font-family: 'IBM Plex Mono', monospace !important;
   }
   
   .text-logo {

@@ -10,7 +10,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`flex flex-col gap-2 items-start relative shrink-0 w-[670px] ${className}`}>
+    <div className={`flex flex-col gap-2 items-start relative shrink-0 w-[800px] ${className}`}>
       {children}
     </div>
   );

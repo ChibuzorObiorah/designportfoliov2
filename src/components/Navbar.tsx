@@ -12,7 +12,7 @@ const Navbar = ({ state = "Rest" }: NavbarProps) => {
   );
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const [selectedTab, setSelectedTab] = useState<"work" | "about">("work");
+  const [selectedTab, setSelectedTab] = useState<"work" | "about" | null>("work");
   const location = useLocation();
 
   useEffect(() => {
@@ -45,8 +45,11 @@ const Navbar = ({ state = "Rest" }: NavbarProps) => {
   useEffect(() => {
     if (location.pathname === "/about") {
       setSelectedTab("about");
-    } else {
+    } else if (location.pathname === "/") {
       setSelectedTab("work");
+    } else {
+      // For case study pages and other routes, don't select any tab
+      setSelectedTab(null);
     }
   }, [location.pathname]);
 
@@ -55,11 +58,15 @@ const Navbar = ({ state = "Rest" }: NavbarProps) => {
   };
 
   const logo = (
-    <div className="flex items-center justify-center px-6 py-2">
+    <Link 
+      to="/" 
+      className="flex items-center justify-center px-6 py-2 cursor-pointer"
+      onClick={() => handleTabClick("work")}
+    >
       <div className="font-['Rubik_Mono_One'] text-[14px] text-fg-1 tracking-[-0.28px]">
         CHIB
       </div>
-    </div>
+    </Link>
   );
 
   const toggleOptions = (
@@ -85,13 +92,12 @@ const Navbar = ({ state = "Rest" }: NavbarProps) => {
 
   const currentState = state || scrollState;
 
-  // Hide navbar when scrolling down
-  if (!isVisible) {
-    return null;
-  }
-
   return (
-    <div className="bg-bg-1 relative w-full transition-all duration-300">
+    <div 
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-transform duration-300 ease-in-out ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="flex items-center justify-between px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-6 relative w-full mx-auto">
         {/* Logo glass container */}
         <div className="glass-container">

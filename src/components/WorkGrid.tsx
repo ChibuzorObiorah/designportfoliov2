@@ -6,54 +6,54 @@ const projects = [
     title: "Shortcutter.io",
     description:
       "Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API",
-    videoSrc: "/videos/shortcutter/shortcutter_prototype.mp4",
+    videoSrc: "/assets/shortcutter/shortcutter_prototype.mp4",
     caseStudyLink: "/shortcutter-case-study",
   },
   {
     title: "Tidy up for OneNote Canvas",
     description: "Integrated AI features in OneNote canvas",
-    videoSrc: "/videos/copilotcanvas/tidyup_prototype.mp4",
+    videoSrc: "/assets/copilotcanvas/tidyup_prototype.mp4",
     caseStudyLink: "/tidyup-case-study",
   },
   {
     title: "Upscale in Designer",
     description:
       "AI-powered image enhancement tool in one click - resulted in high engagement with users",
-    videoSrc: "/videos/upscale/upscale_prototype.mp4",
+    videoSrc: "/assets/upscale/upscale_prototype.mp4",
     caseStudyLink: "/upscale-case-study",
   },
   {
     title: "Copilot Scoping in OneNote",
     description: "Helping users understand the scope of LLMs in OneNote",
-    videoSrc: "/videos/copilotscoping/scopingUI.mp4",
+    videoSrc: "/assets/copilotscoping/scopingUI.mp4",
     caseStudyLink: "/copilot-context",
   },
   {
     title: "Copilot on Canvas",
     description: "Integrated AI features in OneNote canvas",
-    videoSrc: "/videos/copilotcanvas/rewrite_prototype.mp4",
+    videoSrc: "/assets/copilotcanvas/rewrite_prototype.mp4",
     caseStudyLink: "/copilot-canvas-case-study",
   },
   {
     title: "Visualis",
     description:
       "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
-    videoSrc: "/videos/visualis/visualis-prototype.mp4",
+    videoSrc: "/assets/visualis/visualis-prototype.mp4",
     caseStudyLink: "/visualis-case-study",
   },
   {
     title: "iOS Home in OneNote",
     description:
       "Making it easy for users to capture and retrieve notes faster",
-    videoSrc: "/videos/ioshome/placeholder.mp4",
+    videoSrc: "/assets/ioshome/fullflow-ioshome.mp4",
     caseStudyLink: "/case-study",
   },
 ];
 
 // Define the grid layout: each sub-array is a row, containing indices of projects
 const gridLayout = [
-  [0, 1],
-  [4],
+  [4, 6],
+  [0],
   [3, 1], 
   [5,6],
 ];
@@ -84,15 +84,32 @@ const PortfolioGrid = () => {
             className={`flex flex-col ${row.length > 1 ? "lg:flex-row" : ""} gap-16 pb-16`}
             data-oid="nfr8ot2"
           >
-            {row.map((projectIndex) => (
-              <div
-                key={projectIndex}
-                className={row.length > 1 ? "flex-1" : "w-full"}
-                data-oid="zf.jo65"
-              >
-                <WorkCard {...projects[projectIndex]} data-oid="skt8sfd" />
-              </div>
-            ))}
+            {row.map((projectIndex) => {
+              // Special width handling for row with project 4 and 6
+              let widthClass = "w-full";
+              if (row.length > 1) {
+                if (rowIndex === 0 && projectIndex === 4) {
+                  // Project 4 takes 60% width
+                  widthClass = "w-[60%]";
+                } else if (rowIndex === 0 && projectIndex === 6) {
+                  // Project 6 takes 40% width
+                  widthClass = "w-[40%]";
+                } else {
+                  // Other multi-item rows use equal width
+                  widthClass = "flex-1";
+                }
+              }
+              
+              return (
+                <div
+                  key={projectIndex}
+                  className={widthClass}
+                  data-oid="zf.jo65"
+                >
+                  <WorkCard {...projects[projectIndex]} data-oid="skt8sfd" />
+                </div>
+              );
+            })}
           </div>
         ))}
       </div>

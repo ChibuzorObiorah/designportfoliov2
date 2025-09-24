@@ -5,9 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import CaseStudy from "./pages/CaseStudy";
+import IOSHomeCaseStudy from "./pages/ioshome-CaseStudy";
 import NotFound from "./pages/NotFound";
 import CopilotContext from "./pages/CopilotContext";
 
@@ -48,19 +49,14 @@ const App = () => {
         <Toaster data-oid=":1141q." />
         <Sonner data-oid="mgzqa5." />
         <BrowserRouter data-oid="agrlr61">
+          <ScrollToTop />
           <div className="min-h-screen bg-bg-1">
-            {/* Navbar with slide-down animation on initial load */}
-            <div
-              className={`transition-transform duration-1000 ease-out ${
-                showNavbar ? "translate-y-0" : "-translate-y-full"
-              }`}
-            >
-              <Navbar />
-            </div>
+            {/* Fixed navbar that handles its own animations */}
+            {showNavbar && <Navbar />}
             
-            {/* Content with slide-up animation on initial load */}
+            {/* Content with slide-up animation on initial load and top padding for fixed navbar */}
             <div
-              className={`transition-transform duration-1000 ease-out ${
+              className={`pt-[88px] transition-transform duration-1000 ease-out ${
                 showContent ? "translate-y-0" : "translate-y-8"
               }`}
             >
@@ -78,7 +74,7 @@ const App = () => {
 
                 <Route
                   path="/case-study"
-                  element={<CaseStudy />}
+                  element={<IOSHomeCaseStudy />}
                 />
 
                 <Route
