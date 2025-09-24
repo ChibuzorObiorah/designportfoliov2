@@ -10,9 +10,9 @@ const BigCallout: React.FC<BigCalloutProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`flex gap-2 items-center justify-center px-0 py-8 relative w-full ${className}`}>
-      <div className="font-['IBM_Plex_Sans_Condensed'] font-semibold text-[36px] text-fg-1 grow leading-[0] min-h-px min-w-px not-italic relative shrink-0">
-        <p className="leading-[normal]">{text}</p>
+    <div className={`flex items-center justify-start px-0 py-8 relative w-full ${className}`}>
+      <div className="font-['IBM_Plex_Sans_Condensed'] font-semibold text-[36px] text-fg-1 w-full text-left">
+        <p className="leading-[48px] break-words">{text}</p>
       </div>
     </div>
   );

@@ -88,7 +88,7 @@ const CaseStudy = ({ currentProjectTitle = "iOS Home in OneNote" }: CaseStudyPro
           <div className="flex flex-col items-start justify-center pb-3 pt-20 px-0 relative shrink-0 w-full">
             <header className="flex flex-col gap-5 items-start max-w-[1500px] overflow-visible py-0 relative shrink-0 w-full">
               <div className="bg-clip-text bg-gradient-to-b font-['IBM_Plex_Sans_Condensed'] font-semibold from-[#f5f5f5] text-[48px] to-[#fafafa] w-full [&]:text-transparent">
-                <p className="leading-[normal]">Designed a new Home for the iOS app in OneNote, leading to an increase in usage retention</p>
+                <p className="leading-[64px]">Designed a new Home for the iOS app in OneNote, leading to an increase in usage retention</p>
               </div>
             </header>
             <ProjectDetails />
