@@ -30,7 +30,7 @@ const StickyNavigation: React.FC<StickyNavigationProps> = ({
               key={section.id}
               onClick={() => onSectionClick(section.id)}
               className={`block w-full text-left font-['IBM_Plex_Mono'] font-semibold text-[14px] tracking-[-0.28px] transition-colors duration-200 hover:text-fg-1 py-1 ${
-                activeSection === section.id ? 'text-fg-1' : 'text-fg-2'
+                activeSection === section.id ? 'text-fg-1' : 'text-fg-3'
               }`}
             >
               {section.label}
