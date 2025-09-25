@@ -69,13 +69,12 @@ interface CopilotContextProps {
 const CopilotContext = ({ currentProjectTitle = "Copilot Scoping in OneNote" }: CopilotContextProps) => {
   const [isPageVisible, setIsPageVisible] = useState(false);
 
-  // Filter out current project and get 2 random others
+  // Filter out current project and get 2 others
   const otherProjects = projects
     .filter(project => project.title !== currentProjectTitle)
-    .sort(() => Math.random() - 0.5)
     .slice(0, 2);
 
-  // Define sections for Copilot Context case study - matching Figma design with 6 sections
+  // Define sections for Copilot Context case study - matching Figma design with 7 sections
   const copilotSections = [
     { id: 'overview', label: 'OVERVIEW' },
     { id: 'problem', label: 'PROBLEM' },
@@ -83,6 +82,7 @@ const CopilotContext = ({ currentProjectTitle = "Copilot Scoping in OneNote" }: 
     { id: 'insights', label: 'INSIGHTS' },
     { id: 'solution', label: 'SOLUTION' },
     { id: 'impact', label: 'IMPACT' },
+    { id: 'learnings', label: 'LEARNINGS' },
   ];
 
   // Use sticky navigation hook
@@ -186,36 +186,51 @@ Since this affects how users interact with AI features in their daily workflow, 
                   content="Automatically scoping Copilot's context based on users' prompt - letting the AI determine what content to reference."
                 />
 
+                {/* Prototype 1: Auto-scoping Video */}
+                <div className="flex flex-col gap-2 items-center justify-center py-6 w-full">
+                  <video
+                    src="/assets/copilotscoping/autoscope.mp4"
+                    className="rounded-[16px] w-full h-auto object-contain"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </div>
+
                 <TextBlock 
                   title="Prototype 2: Manual scoping"
                   content="Using a dropdown menu to help users manually scope Copilot's context - giving users explicit control."
                 />
+
+                {/* Prototype 2: Manual scoping Video */}
+                <div className="flex flex-col gap-2 items-center justify-center py-6 w-full">
+                  <video
+                    src="/assets/copilotscoping/scopingUI.mp4"
+                    className="rounded-[16px] w-full h-auto object-contain"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </div>
 
                 <TextBlock 
                   title="Prototype 3: File references"
                   content="Leveraged the existing UI for file references to help users reference external files - building on familiar patterns."
                 />
 
-                <ImageContainer 
-                  src="/assets/copilotscoping/autoscope.mp4"
-                  alt="Auto-scoping prototype video"
-                  caption="PROTOTYPE 1: AUTO-SCOPING"
-                  showCaption={false}
-                />
-
-                <ImageContainer 
-                  src="/assets/copilotscoping/scopingUI.mp4"
-                  alt="Manual scoping prototype video"
-                  caption="PROTOTYPE 2: MANUAL SCOPING"
-                  showCaption={false}
-                />
-
-                <ImageContainer 
-                  src="/assets/copilotscoping/contextIQ.mp4"
-                  alt="File references prototype video"
-                  caption="PROTOTYPE 3: FILE REFERENCES"
-                  showCaption={false}
-                />
+                {/* Prototype 3: File references Video */}
+                <div className="flex flex-col gap-2 items-center justify-center py-6 w-full">
+                  <video
+                    src="/assets/copilotscoping/contextIQ.mp4"
+                    className="rounded-[16px] w-full h-auto object-contain"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </div>
               </ContentSection>
               </div>
             </AnimatedSection>
@@ -258,12 +273,19 @@ Since this affects how users interact with AI features in their daily workflow, 
               <div id="solution" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
               <SectionHeader title="SOLUTION" />
               <ContentSection>
-                <TextBlock 
-                  title="Designed a clear context selector that gives users control"
-                  content="Based on our research findings, we designed a solution that balances automatic intelligence with user control, making it clear what content Copilot can access."
+              <BigCallout text="Give people the clear way to steer Copilot, and assist them automatically where we can"/>
+              
+              {/* Solution Video */}
+              <div className="flex flex-col gap-2 items-center justify-center py-6 w-full">
+                <video
+                  src="/assets/copilotscoping/scopingUI.mp4"
+                  className="rounded-[16px] w-full h-auto object-contain"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
-
-                <BigCallout text="The solution gives users visibility and control over Copilot's scope while maintaining simplicity." />
+              </div>
               </ContentSection>
               </div>
             </AnimatedSection>
@@ -282,7 +304,15 @@ Since this affects how users interact with AI features in their daily workflow, 
                   title="Solving a core problem for AI chat interfaces"
                   content="This problem is fundamental for AI chat interfaces integrated into other products, because of the need for users to understand context and steer the AI system correctly. Today similar design patterns are used across different products like Cursor, ChatGPT etc."
                 />
+              </ContentSection>
+              </div>
+            </AnimatedSection>
 
+            {/* Learnings Section */}
+            <AnimatedSection delay={140}>
+              <div id="learnings" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
+              <SectionHeader title="LEARNINGS" />
+              <ContentSection>
                 <TextBlock 
                   title="Balance is key"
                   content="Finding the right balance between AI assistance and user control emerged as a crucial consideration. Users want AI to enhance their workflow without taking away their agency in the note-taking process."

@@ -70,10 +70,9 @@ interface IOSHomeCaseStudyProps {
 const IOSHomeCaseStudy = ({ currentProjectTitle = "iOS Home in OneNote" }: IOSHomeCaseStudyProps) => {
   const [isPageVisible, setIsPageVisible] = useState(false);
 
-  // Filter out current project and get 2 random others
+  // Filter out current project and get 2 others
   const otherProjects = projects
     .filter(project => project.title !== currentProjectTitle)
-    .sort(() => Math.random() - 0.5)
     .slice(0, 2);
 
   // Define sections for iOS Home case study

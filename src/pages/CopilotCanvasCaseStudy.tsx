@@ -71,10 +71,9 @@ interface CopilotCanvasCaseStudyProps {
 const CopilotCanvasCaseStudy = ({ currentProjectTitle = "Copilot on Canvas" }: CopilotCanvasCaseStudyProps) => {
   const [isPageVisible, setIsPageVisible] = useState(false);
 
-  // Filter out current project and get 2 random others
+  // Filter out current project and get 2 others
   const otherProjects = projects
     .filter(project => project.title !== currentProjectTitle)
-    .sort(() => Math.random() - 0.5)
     .slice(0, 2);
 
   // Define sections for Copilot Canvas case study
@@ -116,16 +115,14 @@ const CopilotCanvasCaseStudy = ({ currentProjectTitle = "Copilot on Canvas" }: C
               role="Lead Designer"
               duration="May - June 2024"
               tools="Figma"
-              team="1 PM, 1 Designer, 2 Engineers"
             />
           </div>
 
           {/* Hero Image */}
           <div className="flex flex-col gap-2 items-center justify-center px-0 py-6 relative shrink-0 w-full">
             <ImageContainer 
-              src=""
+              src="/assets/copilotcanvas/copilotcanvas-header.png"
               alt="Copilot on Canvas header image"
-              caption="IMAGE CAPTION"
               adaptToImage={true}
             />
           </div>
@@ -153,8 +150,7 @@ const CopilotCanvasCaseStudy = ({ currentProjectTitle = "Copilot on Canvas" }: C
                   <TextBlock 
                     title="The Copilot experience on the side pane wasn't intuitive for users in adopting to their workflows"
                     content={`We had an integration on the side as a chat, but we heard from user feedback that it felt disconnected, and they had to find it to use it. We wanted to meet them where they're at - right on the canvas.
-
-We wanted to create more value for users with AI. Capturing ideas, brainstorming, editing their content were things LLMs are good at. The side pane made it more cumbersome, we wanted to design an easier way for them to experience this value in their workflow.`}
+                              We wanted to create more value for users with AI. Capturing ideas, brainstorming, editing their content were things LLMs are good at. The side pane made it more cumbersome, we wanted to design an easier way for them to experience this value in their workflow.`}
                   />
                   <TextBlock 
                     title="From a business perspective, this was needed to help increase adoption of Copilot, thereby increasing paying customers"
@@ -188,7 +184,7 @@ We wanted to create more value for users with AI. Capturing ideas, brainstorming
                   />
                   
                   <ImageContainer 
-                    src=""
+                    src="/assets/copilotcanvas/copilotcanvas-research.png"
                     alt="Research insights visualization"
                     caption="IMAGE CAPTION"
                     adaptToImage={true}
@@ -233,36 +229,63 @@ This meant a recurring sync with designers from those products. Where we gave fe
                     content="During this project, ThredUP rebranded, so I focused on the new design system, incorporating feedback and creating two final iterations."
                   />
                   
-                  <ImageContainer 
-                    src=""
-                    alt="Draft prototype"
-                    caption="DRAFT PROTOTYPE"
-                    adaptToImage={true}
-                  />
+                  <div className="flex flex-col gap-2 items-center justify-center px-0 py-6 relative shrink-0 w-full">
+                    <video 
+                      src="/assets/copilotcanvas/tidyup_prototype.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-[16px] w-full h-auto object-contain"
+                    />
+                    <div className="flex gap-2 items-center justify-center py-3 w-full">
+                      <div className="font-['IBM_Plex_Mono'] font-medium text-fg-2 text-[12px] tracking-[-0.24px] uppercase">
+                        <p className="leading-[18px]">DRAFT PROTOTYPE</p>
+                      </div>
+                    </div>
+                  </div>
 
                   <TextBlock 
                     title="Rewrite any content on your canvas"
                     content="I added a feature where the app tells users what kind of card they are inputing right when they type the first number."
                   />
                   
-                  <ImageContainer 
-                    src=""
-                    alt="Rewrite prototype"
-                    caption="REWRITE PROTOTYPE"
-                    adaptToImage={true}
-                  />
+                  <div className="flex flex-col gap-2 items-center justify-center px-0 py-6 relative shrink-0 w-full">
+                    <video 
+                      src="/assets/copilotcanvas/rewrite_prototype.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-[16px] w-full h-auto object-contain"
+                    />
+                    <div className="flex gap-2 items-center justify-center py-3 w-full">
+                      <div className="font-['IBM_Plex_Mono'] font-medium text-fg-2 text-[12px] tracking-[-0.24px] uppercase">
+                        <p className="leading-[18px]">REWRITE PROTOTYPE</p>
+                      </div>
+                    </div>
+                  </div>
 
                   <TextBlock 
                     title="Summarize any content on your canvas"
                     content="Users will be able to know when they make a mistake while filling their information instead of waiting till the end, and having to everything all over again."
                   />
                   
-                  <ImageContainer 
-                    src=""
-                    alt="Summary prototype"
-                    caption="SUMMARY PROTOTYPE"
-                    adaptToImage={true}
-                  />
+                  <div className="flex flex-col gap-2 items-center justify-center px-0 py-6 relative shrink-0 w-full">
+                    <video 
+                      src="/assets/copilotcanvas/summary_prototype.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-[16px] w-full h-auto object-contain"
+                    />
+                    <div className="flex gap-2 items-center justify-center py-3 w-full">
+                      <div className="font-['IBM_Plex_Mono'] font-medium text-fg-2 text-[12px] tracking-[-0.24px] uppercase">
+                        <p className="leading-[18px]">SUMMARY PROTOTYPE</p>
+                      </div>
+                    </div>
+                  </div>
                 </ContentSection>
               </div>
             </AnimatedSection>
