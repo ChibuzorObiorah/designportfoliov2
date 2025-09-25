@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import IOSHomeCaseStudy from "./pages/ioshome-CaseStudy";
+import ThredupCaseStudy from "./pages/ThredupCaseStudy";
 import NotFound from "./pages/NotFound";
 import CopilotContext from "./pages/CopilotContext";
 
@@ -75,6 +76,11 @@ const App = () => {
                 <Route
                   path="/case-study"
                   element={<IOSHomeCaseStudy />}
+                />
+
+                <Route
+                  path="/thredup-case-study"
+                  element={<ThredupCaseStudy />}
                 />
 
                 <Route

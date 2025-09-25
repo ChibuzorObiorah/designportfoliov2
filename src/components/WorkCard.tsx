@@ -26,6 +26,13 @@ export function WorkCard({
     }
   };
 
+  // Helper function to determine if the file is an image or video
+  const isImage = (src: string) => {
+    if (!src) return false;
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+    return imageExtensions.some(ext => src.toLowerCase().endsWith(ext));
+  };
+
   return (
     <div
       className={cn(
@@ -41,16 +48,25 @@ export function WorkCard({
         data-oid="bt_-q3p"
       >
         {videoSrc && (
-          <video
-            src={videoSrc}
-            aria-label={videoAlt}
-            className="w-full h-full object-cover transform scale-105 group-hover:blur-sm transition-all duration-300"
-            autoPlay
-            loop
-            muted
-            playsInline
-            data-oid="ny_c509"
-          />
+          isImage(videoSrc) ? (
+            <img
+              src={videoSrc}
+              alt={videoAlt}
+              className="w-full h-full object-cover transform scale-105 group-hover:blur-sm transition-all duration-300"
+              data-oid="ny_c509"
+            />
+          ) : (
+            <video
+              src={videoSrc}
+              aria-label={videoAlt}
+              className="w-full h-full object-cover transform scale-105 group-hover:blur-sm transition-all duration-300"
+              autoPlay
+              loop
+              muted
+              playsInline
+              data-oid="ny_c509"
+            />
+          )
         )}
       </div>
 

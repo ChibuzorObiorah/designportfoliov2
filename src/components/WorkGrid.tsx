@@ -48,14 +48,21 @@ const projects = [
     videoSrc: "/assets/ioshome/fullflow-ioshome.mp4",
     caseStudyLink: "/case-study",
   },
+  {
+    title: "ThredUp Checkout",
+    description:
+      "Revamped the checkout process to significantly decrease the drop-off rate",
+    videoSrc: "/assets/thredup/thredup-thumbnail.png",
+    caseStudyLink: "/thredup-case-study",
+  },
 ];
 
 // Define the grid layout: each sub-array is a row, containing indices of projects
 const gridLayout = [
-  [4, 6],
-  [0],
-  [3, 1], 
-  [5,6],
+  [4, 6],  // ThredUp project
+  [7, 3],
+  [5],
+  [0, 1],
 ];
 
 const PortfolioGrid = () => {
@@ -81,11 +88,11 @@ const PortfolioGrid = () => {
         {gridLayout.map((row, rowIndex) => (
           <div
             key={rowIndex}
-            className={`flex flex-col ${row.length > 1 ? "lg:flex-row" : ""} gap-16 pb-16`}
+            className={`flex flex-col ${row.length > 1 ? "lg:flex-row" : ""} gap-12 pb-16`}
             data-oid="nfr8ot2"
           >
             {row.map((projectIndex) => {
-              // Special width handling for row with project 4 and 6
+              // Special width handling for specific rows
               let widthClass = "w-full";
               if (row.length > 1) {
                 if (rowIndex === 0 && projectIndex === 4) {
@@ -94,6 +101,12 @@ const PortfolioGrid = () => {
                 } else if (rowIndex === 0 && projectIndex === 6) {
                   // Project 6 takes 40% width
                   widthClass = "w-[40%]";
+                } else if (rowIndex === 1 && projectIndex === 7) {
+                  // Project 7 takes 40% width
+                  widthClass = "w-[40%]";
+                } else if (rowIndex === 1 && projectIndex === 3) {
+                  // Project 3 takes 60% width
+                  widthClass = "w-[60%]";
                 } else {
                   // Other multi-item rows use equal width
                   widthClass = "flex-1";

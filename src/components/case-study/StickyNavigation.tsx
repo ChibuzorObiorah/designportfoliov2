@@ -4,9 +4,10 @@ interface StickyNavigationProps {
   isVisible: boolean;
   activeSection: string;
   onSectionClick: (sectionId: string) => void;
+  sections?: Array<{ id: string; label: string }>;
 }
 
-const sections = [
+const defaultSections = [
   { id: 'problem', label: 'PROBLEM' },
   { id: 'solution', label: 'SOLUTION' },
   { id: 'impact', label: 'IMPACT' },
@@ -19,7 +20,8 @@ const sections = [
 const StickyNavigation: React.FC<StickyNavigationProps> = ({
   isVisible,
   activeSection,
-  onSectionClick
+  onSectionClick,
+  sections = defaultSections
 }) => {
   return (
     <div className="sticky top-6 bg-bg-1/95 backdrop-blur-sm z-20">
