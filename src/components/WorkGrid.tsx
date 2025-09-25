@@ -7,20 +7,20 @@ const projects = [
     description:
       "Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API",
     videoSrc: "/assets/shortcutter/shortcutter_prototype.mp4",
-    caseStudyLink: "/shortcutter-case-study",
+    // caseStudyLink: "/shortcutter-case-study", // Disabled - page not ready
   },
   {
     title: "Tidy up for OneNote Canvas",
     description: "Integrated AI features in OneNote canvas",
     videoSrc: "/assets/copilotcanvas/tidyup_prototype.mp4",
-    caseStudyLink: "/tidyup-case-study",
+    // caseStudyLink: "/tidyup-case-study", // Disabled - page not ready
   },
   {
     title: "Upscale in Designer",
     description:
       "AI-powered image enhancement tool in one click - resulted in high engagement with users",
     videoSrc: "/assets/upscale/upscale_prototype.mp4",
-    caseStudyLink: "/upscale-case-study",
+    // caseStudyLink: "/upscale-case-study", // Disabled - page not ready
   },
   {
     title: "Copilot Scoping in OneNote",
@@ -39,7 +39,7 @@ const projects = [
     description:
       "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
     videoSrc: "/assets/visualis/visualis-prototype.mp4",
-    caseStudyLink: "/visualis-case-study",
+    // caseStudyLink: "/visualis-case-study", // Disabled - page not ready
   },
   {
     title: "iOS Home in OneNote",
@@ -63,16 +63,17 @@ const gridLayout = [
   [7, 3],
   [5],
   [0, 1],
+  [2],
 ];
 
 const PortfolioGrid = () => {
   const [showGrid, setShowGrid] = useState(false);
 
   useEffect(() => {
-    // Show grid at the same time as navbar (1.5 seconds delay)
+    // Show grid with reduced delay for better responsiveness
     const timer = setTimeout(() => {
       setShowGrid(true);
-    }, 1500);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);

@@ -36,7 +36,8 @@ export function WorkCard({
   return (
     <div
       className={cn(
-        "group relative w-full rounded-xl overflow-hidden cursor-pointer",
+        "group relative w-full rounded-xl overflow-hidden",
+        caseStudyLink ? "cursor-pointer" : "cursor-default",
         className,
       )}
       onClick={handleCardClick}
