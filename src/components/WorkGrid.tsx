@@ -6,7 +6,7 @@ const projects = [
     title: "Shortcutter.io",
     description:
       "Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API",
-    videoSrc: "/assets/shortcutter/shortcutter_prototype.mp4",
+    videoSrc: "/assets/shortcutter/shortcutter-prototype.mp4",
     // caseStudyLink: "/shortcutter-case-study", // Disabled - page not ready
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     title: "Upscale in Designer",
     description:
       "AI-powered image enhancement tool in one click - resulted in high engagement with users",
-    videoSrc: "/assets/upscale/upscale_prototype.mp4",
+    videoSrc: "/assets/upscale/upscale-prototype.mp4",
     // caseStudyLink: "/upscale-case-study", // Disabled - page not ready
   },
   {
