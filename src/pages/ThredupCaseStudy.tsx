@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '@/components/Footer';
 import WorkCard from '@/components/WorkCard';
 import StickyNavigation from '@/components/case-study/StickyNavigation';
@@ -10,6 +10,7 @@ import ProjectDetails from '@/components/case-study/ProjectDetails';
 import BigCallout from '@/components/case-study/BigCallout';
 import ContentSection from '@/components/case-study/ContentSection';
 import TextBlock from '@/components/case-study/TextBlock';
+import AnimatedSection from '@/components/case-study/AnimatedSection';
 
 // Projects data - same as in WorkGrid.tsx
 const projects = [
@@ -73,6 +74,8 @@ interface ThredupCaseStudyProps {
 }
 
 const ThredupCaseStudy = ({ currentProjectTitle = "ThredUp Checkout" }: ThredupCaseStudyProps) => {
+  const [isPageVisible, setIsPageVisible] = useState(false);
+
   // Filter out current project and get 2 random others
   const otherProjects = projects
     .filter(project => project.title !== currentProjectTitle)
@@ -93,8 +96,16 @@ const ThredupCaseStudy = ({ currentProjectTitle = "ThredUp Checkout" }: ThredupC
   // Use sticky navigation hook
   const { isNavVisible, activeSection, handleSectionClick } = useStickyNavigation();
 
+  // Page entrance animation
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPageVisible(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-bg-1">
+    <div className={`min-h-screen bg-bg-1 transition-opacity duration-1000 ease-out ${isPageVisible ? 'opacity-100' : 'opacity-0'}`}>
       {/* Main Content Container */}
       <div className="flex flex-col items-center px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] xl:px-[80px] py-0 w-full max-w-[1280px] mx-auto">
         {/* Header Section */}
@@ -138,31 +149,35 @@ const ThredupCaseStudy = ({ currentProjectTitle = "ThredUp Checkout" }: ThredupC
           {/* Right Content Area */}
           <div className="w-full">
             {/* Overview Section */}
-            <div id="overview" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
-              <SectionHeader title="OVERVIEW" />
-              <ContentSection>
-                <TextBlock 
-                  title="I interned as a designer at ThredUp, the biggest online thrift store, where I experienced a significant rebranding effort."
-                  content={`ThredUP is the largest fashion resale marketplace for secondhand clothing. As a product design intern, I worked with the team on their native app, focusing on improving the checkout experience.
+            <AnimatedSection delay={200}>
+              <div id="overview" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
+                <SectionHeader title="OVERVIEW" />
+                <ContentSection>
+                  <TextBlock 
+                    title="I interned as a designer at ThredUp, the biggest online thrift store, where I experienced a significant rebranding effort."
+                    content={`ThredUP is the largest fashion resale marketplace for secondhand clothing. As a product design intern, I worked with the team on their native app, focusing on improving the checkout experience.
 
 My experience encompasses product thinking, research, visual design, and prototyping. This was my inaugural project as a company employee, and I learned immensely from the guidance of my manager, Sarah.`}
-                />
-              </ContentSection>
-            </div>
+                  />
+                </ContentSection>
+              </div>
+            </AnimatedSection>
 
             {/* Problem Section */}
-            <div id="problem" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
-              <SectionHeader title="PROBLEM" />
-              <ContentSection>
-                <TextBlock 
-                  title="There was a 68% drop-off rate from the cart page to the checkout page, and a 20% more before users placed orders"
-                  content={`On the ThredUp native app, there was a 68% drop-off rate from the cart page to the checkout page, and even a 20% more drop-off rate from the checkout page to users placing an order.
+            <AnimatedSection delay={100}>
+              <div id="problem" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
+                <SectionHeader title="PROBLEM" />
+                <ContentSection>
+                  <TextBlock 
+                    title="There was a 68% drop-off rate from the cart page to the checkout page, and a 20% more before users placed orders"
+                    content={`On the ThredUp native app, there was a 68% drop-off rate from the cart page to the checkout page, and even a 20% more drop-off rate from the checkout page to users placing an order.
 
 Since the checkout funnel is an important part of the ThredUp business, we wanted to see if we could reduce the drop-off rate by optimizing the design.`}
-                />
-                <BigCallout text="How might we simplify the checkout process and reduce the drop-off rate?" />
-              </ContentSection>
-            </div>
+                  />
+                  <BigCallout text="How might we simplify the checkout process and reduce the drop-off rate?" />
+                </ContentSection>
+              </div>
+            </AnimatedSection>
 
             {/* Research Section */}
             <div id="research" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
@@ -256,89 +271,91 @@ Taking into some business considerations and technical limitations, I moved on t
             </div>
 
             {/* Solution Section */}
-            <div id="solution" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
-              <SectionHeader title="SOLUTION" />
-              <ContentSection>
-                <TextBlock 
-                  title="Adjusted to fit ThredUp's rebrand"
-                  content="During this project, ThredUP rebranded, so I focused on the new design system, incorporating feedback and creating two final iterations."
-                />
-                
-                <ImageContainer 
-                  src="/assets/thredup/rebranded-versions.png"
-                  alt="Rebranded versions"
-                  caption="REBRANDED CHECKOUT ITERATIONS"
-                  adaptToImage={true}
-                />
+            <AnimatedSection delay={200}>
+              <div id="solution" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
+                <SectionHeader title="SOLUTION" />
+                <ContentSection>
+                  <TextBlock 
+                    title="Adjusted to fit ThredUp's rebrand"
+                    content="During this project, ThredUP rebranded, so I focused on the new design system, incorporating feedback and creating two final iterations."
+                  />
+                  
+                  <ImageContainer 
+                    src="/assets/thredup/rebranded-versions.png"
+                    alt="Rebranded versions"
+                    caption="REBRANDED CHECKOUT ITERATIONS"
+                    adaptToImage={true}
+                  />
 
-                <TextBlock 
-                  title="Paid attention to the smallest interactions to provide delight for users and ease frustrations common in the checkout flows"
-                  content="To achieve our Checkout goal, I analyzed all interactions, from validations to button clicks. I created a prototype to visualize these interactions."
-                />
+                  <TextBlock 
+                    title="Paid attention to the smallest interactions to provide delight for users and ease frustrations common in the checkout flows"
+                    content="To achieve our Checkout goal, I analyzed all interactions, from validations to button clicks. I created a prototype to visualize these interactions."
+                  />
 
-                <TextBlock 
-                  title="Credit card inline validation"
-                  content="I added a feature where the app tells users what kind of card they are inputing right when they type the first number."
-                />
-                
-                <GifContainer 
-                  src="/assets/thredup/card-validation.gif"
-                  alt="Card validation"
-                  caption="INLINE CREDIT CARD VALIDATION"
-                />
+                  <TextBlock 
+                    title="Credit card inline validation"
+                    content="I added a feature where the app tells users what kind of card they are inputing right when they type the first number."
+                  />
+                  
+                  <GifContainer 
+                    src="/assets/thredup/card-validation.gif"
+                    alt="Card validation"
+                    caption="INLINE CREDIT CARD VALIDATION"
+                  />
 
-                <TextBlock 
-                  title="Handling errors on the go"
-                  content="Users will be able to know when they make a mistake while filling their information instead of waiting till the end, and having to everything all over again."
-                />
-                
-                <GifContainer 
-                  src="/assets/thredup/inline-validation.gif"
-                  alt="Inline validation"
-                  caption="REAL-TIME ERROR VALIDATION"
-                />
+                  <TextBlock 
+                    title="Handling errors on the go"
+                    content="Users will be able to know when they make a mistake while filling their information instead of waiting till the end, and having to everything all over again."
+                  />
+                  
+                  <GifContainer 
+                    src="/assets/thredup/inline-validation.gif"
+                    alt="Inline validation"
+                    caption="REAL-TIME ERROR VALIDATION"
+                  />
 
-                <TextBlock 
-                  title="Tooltips to help educate users"
-                  content="Redesigned the tooltips to give users better information of what is required of them as they are filling out the forms."
-                />
-                
-                <GifContainer 
-                  src="/assets/thredup/tooltip.gif"
-                  alt="Tooltip design"
-                  caption="HELPFUL TOOLTIPS"
-                />
+                  <TextBlock 
+                    title="Tooltips to help educate users"
+                    content="Redesigned the tooltips to give users better information of what is required of them as they are filling out the forms."
+                  />
+                  
+                  <GifContainer 
+                    src="/assets/thredup/tooltip.gif"
+                    alt="Tooltip design"
+                    caption="HELPFUL TOOLTIPS"
+                  />
 
-                <TextBlock 
-                  title="Highlighted the promo code"
-                  content="The promo code was previously hidden. It incentivizes purchases, so I emphasized it more than before."
-                />
-                
-                <GifContainer 
-                  src="/assets/thredup/promo-code.gif"
-                  alt="Promo code feature"
-                  caption="PROMINENT PROMO CODE FIELD"
-                />
+                  <TextBlock 
+                    title="Highlighted the promo code"
+                    content="The promo code was previously hidden. It incentivizes purchases, so I emphasized it more than before."
+                  />
+                  
+                  <GifContainer 
+                    src="/assets/thredup/promo-code.gif"
+                    alt="Promo code feature"
+                    caption="PROMINENT PROMO CODE FIELD"
+                  />
 
-                <TextBlock 
-                  title="Order confirmation page"
-                  content="I found a great oppurtunity here to add elements of the rebrand, giving users an exciting confirmation notice when they place their order and gives them option to keep navigating through the app."
-                />
-                
-                <GifContainer 
-                  src="/assets/thredup/order-completed.gif"
-                  alt="Order confirmation"
-                  caption="DELIGHTFUL ORDER CONFIRMATION"
-                />
+                  <TextBlock 
+                    title="Order confirmation page"
+                    content="I found a great oppurtunity here to add elements of the rebrand, giving users an exciting confirmation notice when they place their order and gives them option to keep navigating through the app."
+                  />
+                  
+                  <GifContainer 
+                    src="/assets/thredup/order-completed.gif"
+                    alt="Order confirmation"
+                    caption="DELIGHTFUL ORDER CONFIRMATION"
+                  />
 
-                <ImageContainer 
-                  src="/assets/thredup/thredup-final-img.jpg"
-                  alt="Final solution"
-                  caption="FINAL CHECKOUT SOLUTION"
-                  adaptToImage={true}
-                />
-              </ContentSection>
-            </div>
+                  <ImageContainer 
+                    src="/assets/thredup/thredup-final-img.jpg"
+                    alt="Final solution"
+                    caption="FINAL CHECKOUT SOLUTION"
+                    adaptToImage={true}
+                  />
+                </ContentSection>
+              </div>
+            </AnimatedSection>
 
             {/* Learnings Section */}
             <div id="learnings" className="flex flex-col gap-2 items-start px-0 py-6 relative shrink-0 w-full">
@@ -358,18 +375,20 @@ Taking into some business considerations and technical limitations, I moved on t
         </div>
 
         {/* More Case Studies Section */}
-        <div className="flex flex-col gap-9 items-start px-0 py-20 relative shrink-0 w-full">
-          <div className="font-['IBM_Plex_Mono'] font-semibold text-fg-2 text-[14px] tracking-[-0.28px] w-full">
-            <p className="leading-[normal]">MORE CASE STUDIES</p>
+        <AnimatedSection delay={150}>
+          <div className="flex flex-col gap-9 items-start px-0 py-20 relative shrink-0 w-full">
+            <div className="font-['IBM_Plex_Mono'] font-semibold text-fg-2 text-[14px] tracking-[-0.28px] w-full">
+              <p className="leading-[normal]">MORE CASE STUDIES</p>
+            </div>
+            <div className="flex flex-col lg:flex-row gap-16 items-start w-full">
+              {otherProjects.map((project, index) => (
+                <div key={index} className="flex-1 w-full">
+                  <WorkCard {...project} />
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-16 items-start w-full">
-            {otherProjects.map((project, index) => (
-              <div key={index} className="flex-1 w-full">
-                <WorkCard {...project} />
-              </div>
-            ))}
-          </div>
-        </div>
+        </AnimatedSection>
       </div>
 
       {/* Use existing Footer component */}

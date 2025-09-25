@@ -30,9 +30,9 @@ const projects = [
   },
   {
     title: "Copilot on Canvas",
-    description: "Integrated AI features in OneNote canvas",
+    description: "Crafted an engaging Copilot experience on OneNote Canvas, significantly boosting user adoption",
     videoSrc: "/assets/copilotcanvas/rewrite_prototype.mp4",
-    caseStudyLink: "/copilot-canvas-case-study",
+    caseStudyLink: "/copilot-canvas",
   },
   {
     title: "Visualis",
@@ -59,7 +59,7 @@ const projects = [
 
 // Define the grid layout: each sub-array is a row, containing indices of projects
 const gridLayout = [
-  [4, 6],  // ThredUp project
+  [4, 6],
   [7, 3],
   [5],
   [0, 1],

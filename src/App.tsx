@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import IOSHomeCaseStudy from "./pages/ioshome-CaseStudy";
 import ThredupCaseStudy from "./pages/ThredupCaseStudy";
+import CopilotCanvasCaseStudy from "./pages/CopilotCanvasCaseStudy";
 import NotFound from "./pages/NotFound";
 import CopilotContext from "./pages/CopilotContext";
 
@@ -87,6 +88,11 @@ const App = () => {
                   path="/copilot-context"
                   element={<CopilotContext data-oid="1iwtzy5" />}
                   data-oid="v96790b"
+                />
+
+                <Route
+                  path="/copilot-canvas"
+                  element={<CopilotCanvasCaseStudy />}
                 />
 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

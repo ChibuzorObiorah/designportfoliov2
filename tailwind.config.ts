@@ -27,13 +27,13 @@ export default {
 			},
 			fontSize: {
 				'display': ['68px', { lineHeight: '92px', fontWeight: '700' }],
-				'title-1': ['48px', { lineHeight: '100%', fontWeight: '600' }],
-				'title-2': ['36px', { lineHeight: '100%', fontWeight: '600' }],
-				'title-3': ['24px', { lineHeight: '100%', fontWeight: '600' }],
+				'title-1': ['48px', { lineHeight: '64px', fontWeight: '600' }],
+				'title-2': ['36px', { lineHeight: '48px', fontWeight: '600' }],
+				'title-3': ['24px', { lineHeight: '32px', fontWeight: '600' }],
 				'subtitle-1': ['16px', { lineHeight: '100%', fontWeight: '600' }],
-				'body-1': ['14px', { lineHeight: '150%', fontWeight: '400' }],
+				'body-1': ['16px', { lineHeight: '22px', fontWeight: '400' }],
 				'caption-1': ['14px', { lineHeight: '100%', fontWeight: '600' }],
-				'caption-2': ['12px', { lineHeight: '100%', fontWeight: '500' }],
+				'caption-2': ['12px', { lineHeight: '18px', fontWeight: '500' }],
 			},		
 
 			colors: {
