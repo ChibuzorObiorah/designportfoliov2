@@ -88,57 +88,60 @@ const PortfolioGrid = () => {
     >
       <div className="w-full mx-auto" data-oid="r9c34h1">
         {gridLayout.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className={`flex flex-col ${row.length > 1 ? "lg:flex-row" : ""} gap-12 pb-16`}
-            data-oid="nfr8ot2"
-          >
-            {row.map((projectIndex) => {
-              // Special width handling for specific rows
-              let widthClass = "w-full";
-              if (row.length > 1) {
-                if (rowIndex === 0 && projectIndex === 4) {
-                  // Project 4 takes 60% width
-                  widthClass = "w-[60%]";
-                } else if (rowIndex === 0 && projectIndex === 6) {
-                  // Project 6 takes 40% width
-                  widthClass = "w-[40%]";
-                } else if (rowIndex === 1 && projectIndex === 7) {
-                  // Project 7 takes 40% width
-                  widthClass = "w-[40%]";
-                } else if (rowIndex === 1 && projectIndex === 3) {
-                  // Project 3 takes 60% width
-                  widthClass = "w-[60%]";
-                } else {
-                  // Other multi-item rows use equal width
-                  widthClass = "flex-1";
-                }
-              }
-              
-              return (
-                <div
-                  key={projectIndex}
-                  className={widthClass}
-                  data-oid="zf.jo65"
-                >
-                  <WorkCard {...projects[projectIndex]} data-oid="skt8sfd" />
+          <div key={rowIndex}>
+            {/* Add Reels header before the third row (index 2) */}
+            {rowIndex === 2 && (
+              <div className="w-full py-12">
+                <div className="text-center">
+                  <h2 className="font-rubik-mono-one text-[36px] text-fg-1 mb-2">
+                    Reels
+                  </h2>
+                  <p className="text-caption-1 text-fg-2 uppercase">
+                    CASE STUDIES COMING SOON
+                  </p>
                 </div>
-              );
-            })}
+              </div>
+            )}
+            
+            <div
+              className={`flex flex-col ${row.length > 1 ? "lg:flex-row" : ""} gap-12 pb-16`}
+              data-oid="nfr8ot2"
+            >
+              {row.map((projectIndex) => {
+                // Special width handling for specific rows
+                let widthClass = "w-full";
+                if (row.length > 1) {
+                  if (rowIndex === 0 && projectIndex === 4) {
+                    // Project 4 takes 60% width
+                    widthClass = "w-[60%]";
+                  } else if (rowIndex === 0 && projectIndex === 6) {
+                    // Project 6 takes 40% width
+                    widthClass = "w-[40%]";
+                  } else if (rowIndex === 1 && projectIndex === 7) {
+                    // Project 7 takes 40% width
+                    widthClass = "w-[40%]";
+                  } else if (rowIndex === 1 && projectIndex === 3) {
+                    // Project 3 takes 60% width
+                    widthClass = "w-[60%]";
+                  } else {
+                    // Other multi-item rows use equal width
+                    widthClass = "flex-1";
+                  }
+                }
+                
+                return (
+                  <div
+                    key={projectIndex}
+                    className={widthClass}
+                    data-oid="zf.jo65"
+                  >
+                    <WorkCard {...projects[projectIndex]} data-oid="skt8sfd" />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         ))}
-      </div>
-      
-      {/* Reels Section Header */}
-      <div className="w-full px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-12">
-        <div className="text-center">
-          <h2 className="font-rubik-mono-one text-[36px] text-fg-1 mb-2">
-            Reels
-          </h2>
-          <p className="text-caption-1 text-fg-2 uppercase">
-            CASE STUDIES COMING SOON
-          </p>
-        </div>
       </div>
     </section>
   );
