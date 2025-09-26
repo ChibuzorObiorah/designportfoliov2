@@ -43,6 +43,7 @@ const About = () => {
   };
 
   return (
+    <>
     <div className={`min-h-screen bg-bg-1 transition-opacity duration-1000 ease-out ${isPageVisible ? 'opacity-100' : 'opacity-0'}`}>
       {/* Photo Gallery Section */}
       <div className="w-full px-[80px] pt-[80px] pb-[80px]">
@@ -178,10 +179,11 @@ const About = () => {
           </AnimatedSection>
         </div>
       </div>
-      
-      {/* Footer */}
-      <Footer />
     </div>
+    
+    {/* Footer */}
+    <Footer />
+    </>
   );
 };
 

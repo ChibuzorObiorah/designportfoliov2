@@ -50,21 +50,36 @@ const Footer = () => {
           className="flex font-ibm-plex-mono font-semibold gap-[8px] sm:gap-[12px] md:gap-[16px] items-center leading-[0] text-fg-2 text-[12px] sm:text-[14px] text-nowrap tracking-[-0.28px]"
           data-name="Menu-Items"
         >
-          <div className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+          <a 
+            href="mailto:obiorahchibuzor3@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
+          >
             <p className="leading-[normal] text-nowrap whitespace-pre">
-              ABOUT
+              EMAIL
             </p>
-          </div>
-          <div className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/chibobi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
+          >
             <p className="leading-[normal] text-nowrap whitespace-pre">
               LINKEDIN
             </p>
-          </div>
-          <div className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+          </a>
+          <a 
+            href="https://drive.google.com/file/d/1QGsf-0iKpV6G5IJLTIx2FistmSfOX0x5/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
+          >
             <p className="leading-[normal] text-nowrap whitespace-pre">
               RESUME
             </p>
-          </div>
+          </a>
         </div>
       </div>
 
