@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import WorkCard from "./WorkCard";
 
-const projects = [
+// All projects including those not ready yet
+const allProjects = [
   {
     title: "Shortcutter.io",
     description:
@@ -57,13 +58,14 @@ const projects = [
   },
 ];
 
-// Define the grid layout: each sub-array is a row, containing indices of projects
+// Filter to only show projects that have case study pages ready
+const projects = allProjects.filter(project => project.caseStudyLink);
+
+// Define the grid layout for the filtered projects (only clickable ones)
+// Current clickable projects: Copilot Canvas, iOS Home, ThredUp, Copilot Scoping
 const gridLayout = [
-  [4, 6],
-  [7, 3],
-  [5],
-  [0, 1],
-  [2],
+  [0, 2], // Copilot on Canvas, iOS Home
+  [3, 1], // ThredUp, Copilot Scoping
 ];
 
 const PortfolioGrid = () => {
