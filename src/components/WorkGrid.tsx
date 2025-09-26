@@ -5,53 +5,54 @@ const projects = [
   {
     title: "Shortcutter.io",
     description:
-      "Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API",
+      "Built a game to help users master keyboard shortcuts through muscle memory, to make learning efficient, and fun.",
     videoSrc: "/assets/shortcutter/shortcutter-prototype.mp4",
     // caseStudyLink: "/shortcutter-case-study", // Disabled - page not ready
   },
   {
     title: "Tidy up for OneNote Canvas",
-    description: "Integrated AI features in OneNote canvas",
+    description: "Designed a one-click feature to tidy up the OneNote canvas, to help users relaize value with AI with less effort.",
     videoSrc: "/assets/copilotcanvas/tidyup_prototype.mp4",
     // caseStudyLink: "/tidyup-case-study", // Disabled - page not ready
   },
   {
     title: "Upscale in Designer",
     description:
-      "AI-powered image enhancement tool in one click - resulted in high engagement with users",
+      "Designed anAI-powered image enhancement tool in one click - resulting in high engagement with users",
     videoSrc: "/assets/upscale/upscale-prototype.mp4",
     // caseStudyLink: "/upscale-case-study", // Disabled - page not ready
   },
   {
     title: "Copilot Scoping in OneNote",
-    description: "Helping users understand the scope of LLMs in OneNote",
+    description: "Helping users understand the scope of LLMs in OneNote, increasing user adoption and satisfaction.",
     videoSrc: "/assets/copilotscoping/scopingUI.mp4",
     caseStudyLink: "/copilot-context",
   },
   {
     title: "Copilot on Canvas",
     description: "Crafted an engaging Copilot experience on OneNote Canvas, significantly boosting user adoption",
-    videoSrc: "/assets/copilotcanvas/rewrite_prototype.mp4",
+    videoSrc: "/assets/copilotcanvas/rewrite.mp4",
     caseStudyLink: "/copilot-canvas",
   },
   {
     title: "Visualis",
     description:
-      "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
+      "Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API",
     videoSrc: "/assets/visualis/visualis-prototype.mp4",
     // caseStudyLink: "/visualis-case-study", // Disabled - page not ready
   },
+
   {
     title: "iOS Home in OneNote",
     description:
-      "Making it easy for users to capture and retrieve notes faster",
+      "Designed the OneNote iOS app to make it easy for users to capture and retrieve notes faster, increasing usage and retention.",
     videoSrc: "/assets/ioshome/fullflow-ioshome.mp4",
     caseStudyLink: "/case-study",
   },
   {
     title: "ThredUp Checkout",
     description:
-      "Revamped the checkout process to significantly decrease the drop-off rate",
+      "Revamped the checkout process for the Thredup appto significantly decrease the drop-off rate",
     videoSrc: "/assets/thredup/thredup-thumbnail.png",
     caseStudyLink: "/thredup-case-study",
   },

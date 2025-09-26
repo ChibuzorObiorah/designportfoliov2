@@ -231,7 +231,7 @@ This meant a recurring sync with designers from those products. Where we gave fe
                   
                   <div className="flex flex-col gap-2 items-center justify-center px-0 py-6 relative shrink-0 w-full">
                     <video 
-                      src="/assets/copilotcanvas/tidyup_prototype.mp4"
+                      src="/assets/copilotcanvas/draft.mp4"
                       autoPlay
                       loop
                       muted
@@ -252,7 +252,7 @@ This meant a recurring sync with designers from those products. Where we gave fe
                   
                   <div className="flex flex-col gap-2 items-center justify-center px-0 py-6 relative shrink-0 w-full">
                     <video 
-                      src="/assets/copilotcanvas/rewrite_prototype.mp4"
+                      src="/assets/copilotcanvas/rewrite.mp4"
                       autoPlay
                       loop
                       muted
@@ -273,7 +273,7 @@ This meant a recurring sync with designers from those products. Where we gave fe
                   
                   <div className="flex flex-col gap-2 items-center justify-center px-0 py-6 relative shrink-0 w-full">
                     <video 
-                      src="/assets/copilotcanvas/summary_prototype.mp4"
+                      src="/assets/copilotcanvas/summary.mp4"
                       autoPlay
                       loop
                       muted
