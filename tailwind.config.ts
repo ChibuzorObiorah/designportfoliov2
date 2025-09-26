@@ -23,6 +23,7 @@ export default {
 				'ibm-plex': ['IBM Plex Sans', 'sans-serif'],
 				'ibm-plex-mono': ['IBM Plex Mono', 'monospace'],
 				'ibm-plex-condensed': ['IBM Plex Sans Condensed', 'sans-serif'],
+				'rubik-mono-one': ['Rubik Mono One', 'monospace'],
 				sans: ['IBM Plex Sans', 'sans-serif'],
 			},
 			fontSize: {
