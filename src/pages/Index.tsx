@@ -21,7 +21,7 @@ const Index = ({ isInitialLoad }: IndexProps) => {
       // Then show description after particles have animated for a while
       const descriptionTimer = setTimeout(() => {
         setShowDescription(true);
-      }, 1200);
+      }, 1000);
 
       return () => {
         clearTimeout(particleTimer);

@@ -37,7 +37,7 @@ const App = () => {
         setShowContent(true);
         setIsInitialLoad(false);
         sessionStorage.setItem('hasLoadedBefore', 'true');
-      }, 2500); // Show navbar and content after description dissolves in
+      }, 2000); // Show navbar and content after description dissolves in
 
       return () => {
         clearTimeout(slideInTimer);

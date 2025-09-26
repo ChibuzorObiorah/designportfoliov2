@@ -12,56 +12,7 @@ import BigCallout from '@/components/case-study/BigCallout';
 import ContentSection from '@/components/case-study/ContentSection';
 import TextBlock from '@/components/case-study/TextBlock';
 import AnimatedSection from '@/components/case-study/AnimatedSection';
-
-// Projects data - same as in WorkGrid.tsx
-const projects = [
-  {
-    title: "Shortcutter.io",
-    description:
-      "Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API",
-    videoSrc: "/assets/shortcutter/shortcutter_prototype.mp4",
-    caseStudyLink: "/shortcutter-case-study",
-  },
-  {
-    title: "Tidy up for OneNote Canvas",
-    description: "Integrated AI features in OneNote canvas",
-    videoSrc: "/assets/copilotcanvas/tidyup_prototype.mp4",
-    caseStudyLink: "/tidyup-case-study",
-  },
-  {
-    title: "Upscale in Designer",
-    description:
-      "AI-powered image enhancement tool in one click - resulted in high engagement with users",
-    videoSrc: "/assets/upscale/upscale_prototype.mp4",
-    caseStudyLink: "/upscale-case-study",
-  },
-  {
-    title: "Copilot Scoping in OneNote",
-    description: "Helping users understand the scope of LLMs in OneNote",
-    videoSrc: "/assets/copilotscoping/scopingUI.mp4",
-    caseStudyLink: "/copilot-context",
-  },
-  {
-    title: "Copilot on Canvas",
-    description: "Integrated AI features in OneNote canvas",
-    videoSrc: "/assets/copilotcanvas/rewrite_prototype.mp4",
-    caseStudyLink: "/copilot-canvas-case-study",
-  },
-  {
-    title: "Visualis",
-    description:
-      "Built a game that helps users master keyboard shortcuts through muscle memory—designed to make learning efficient, and fun.",
-    videoSrc: "/assets/visualis/visualis-prototype.mp4",
-    caseStudyLink: "/visualis-case-study",
-  },
-  {
-    title: "iOS Home in OneNote",
-    description:
-      "Making it easy for users to capture and retrieve notes faster",
-    videoSrc: "/assets/ioshome/placeholder.mp4",
-    caseStudyLink: "/case-study",
-  },
-];
+import { getOtherCaseStudyProjects } from '@/data/projects';
 
 interface IOSHomeCaseStudyProps {
   currentProjectTitle?: string;
@@ -70,10 +21,8 @@ interface IOSHomeCaseStudyProps {
 const IOSHomeCaseStudy = ({ currentProjectTitle = "iOS Home in OneNote" }: IOSHomeCaseStudyProps) => {
   const [isPageVisible, setIsPageVisible] = useState(false);
 
-  // Filter out current project and get 2 others
-  const otherProjects = projects
-    .filter(project => project.title !== currentProjectTitle)
-    .slice(0, 2);
+  // Get other projects with working case studies only
+  const otherProjects = getOtherCaseStudyProjects(currentProjectTitle, 2);
 
   // Define sections for iOS Home case study
   const iosHomeSections = [
