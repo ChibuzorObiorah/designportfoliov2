@@ -55,7 +55,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
 
   return (
     <div 
-      ref={elementRef} 
+      ref={elementRef as React.RefObject<HTMLDivElement>} 
       className={`${getAnimationClasses()} ${className}`}
     >
       {children}

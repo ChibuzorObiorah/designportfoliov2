@@ -12,7 +12,7 @@ const TexturedFooter = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/footer-img/textured-footer.png')"
+          backgroundImage: "url('/footer-img/Textured-footer.png')"
         }}
         data-name="Texture-img"
       />
