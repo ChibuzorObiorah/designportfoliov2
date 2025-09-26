@@ -129,17 +129,14 @@ const About = () => {
                 <ContentSection>
                   <TextBlock 
                     title="The kind of craft architects put in their work"
-                    content="My design experience began in Architecture. We threw sleep out the window, 
-                    watching the sun rise, just to make sure our lines were straight. 
-                    That's craft. And I like to bring that kind of intentionality to work I care about."
+                    content="My design experience began in Architecture. We threw sleep out the window, watching the sun rise, just to make sure our lines were straight. That's craft. And I like to bring that kind of intentionality to work I care about."
                   />
                 </ContentSection>
 
                 <ContentSection>
                   <TextBlock 
                     title="Strong relaionship with my PM and engineering partners"
-                    content="The outcome of a product is directly related with how well the triad works. I learn a lot from them,
-                    and it makes buiding so much more enjoyable."
+                    content="The outcome of a product is directly related with how well the triad works. I learn a lot from them, and it makes buiding so much more enjoyable."
                   />
                 </ContentSection>
 
