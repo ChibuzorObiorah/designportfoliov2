@@ -10,30 +10,51 @@ export default function ParticleHero() {
   useEffect(() => {
     // Wait for the font to load before running the canvas logic
     let isMounted = true;
+    const fontLoadTimeout = setTimeout(() => {
+      console.log('Font load timeout, proceeding anyway');
+      if (isMounted) setFontLoaded(true);
+    }, 3000); // 3 second timeout
+    
     async function loadFontAndStart() {
-      // Wait for the font to be loaded
+      console.log('Starting font load...');
       try {
         await document.fonts.load("900 100px 'Rubik Mono One'");
         await document.fonts.ready;
-        if (isMounted) setFontLoaded(true);
+        console.log('Font loaded successfully');
+        if (isMounted) {
+          clearTimeout(fontLoadTimeout);
+          setFontLoaded(true);
+        }
       } catch (e) {
-        // If font loading fails, still proceed
-        if (isMounted) setFontLoaded(true);
+        console.warn('Font loading failed, proceeding anyway:', e);
+        if (isMounted) {
+          clearTimeout(fontLoadTimeout);
+          setFontLoaded(true);
+        }
       }
     }
     loadFontAndStart();
     return () => {
       isMounted = false;
+      clearTimeout(fontLoadTimeout);
     };
   }, []);
 
   useEffect(() => {
     if (!fontLoaded) return;
+    console.log('Initializing canvas...');
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) {
+      console.error('Canvas not found');
+      return;
+    }
 
     const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    if (!ctx) {
+      console.error('Canvas context not available');
+      return;
+    }
+    console.log('Canvas initialized successfully');
 
     const updateCanvasSize = () => {
       canvas.width = window.innerWidth;
