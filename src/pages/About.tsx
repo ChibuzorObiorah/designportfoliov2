@@ -96,7 +96,7 @@ const About = () => {
         <div className="max-w-[1120px] mx-auto">
           {/* Quick Facts Section */}
           <AnimatedSection delay={300}>
-            <div className="w-full mb-[80px]">
+            <div className="w-full mb-[32px]">
               <div className="w-[720px] mx-auto">
                 <ContentSection>
                   <div>
@@ -125,9 +125,17 @@ const About = () => {
                 <ContentSection>
                   <TextBlock 
                     title="The kind of craft architects put in their work"
-                    content="My design experience began in Architecture, we threw sleep out the window, 
-                    watching the sun rise to make sure our lines were straight. 
+                    content="My design experience began in Architecture. We threw sleep out the window, 
+                    watching the sun rise, just to make sure our lines were straight. 
                     That's craft. And I like to bring that kind of intentionality to work I care about."
+                  />
+                </ContentSection>
+
+                <ContentSection>
+                  <TextBlock 
+                    title="Strong relaionship with my PM and engineering partners"
+                    content="The outcome of a product is directly related with how well the triad works. I learn a lot from them,
+                    and it makes buiding so much more enjoyable."
                   />
                 </ContentSection>
 
@@ -140,8 +148,8 @@ const About = () => {
 
                 <ContentSection>
                   <TextBlock 
-                    title="Understanding why my work matters to the business"
-                    content="I want to know why the business cares in what I am doing. The money keeps the light on, and after all, they’re paying me."
+                    title="Understanding how the work impacts the business"
+                    content="The money keeps the light on, and after all, they’re paying me."
                   />
                 </ContentSection>
 
@@ -163,14 +171,6 @@ const About = () => {
                   <TextBlock 
                     title="Ongoing relationship with people I design for"
                     content="I genuinely think it's a privilege that I get to design for people. I'll jump at any opportunity to talk to people I'm designing for."
-                  />
-                </ContentSection>
-
-                <ContentSection>
-                  <TextBlock 
-                    title="Strong relaionship with my PM and engineering partners"
-                    content="The outcome of a product is directly related with how well the triad works. I learn a lot from them,
-                    and it makes buiding so much more enjoyable."
                   />
                 </ContentSection>
               </div>
