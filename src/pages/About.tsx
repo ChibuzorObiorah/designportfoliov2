@@ -125,49 +125,52 @@ const About = () => {
                 <ContentSection>
                   <TextBlock 
                     title="The kind of craft architects put in their work"
-                    content="No design specifications on architecture, where something need to be weathered. Today, as people inhabit digital spaces, I strive to create well-crafted experiences with the same rigor."
+                    content="My design experience began in Architecture, we threw sleep out the window, 
+                    watching the sun rise to make sure our lines were straight. 
+                    That's craft. And I like to bring that kind of intentionality to work I care about."
                   />
                 </ContentSection>
 
                 <ContentSection>
                   <TextBlock 
                     title="A culture of candor"
-                    content="If it's not debate then no. If it's good, tell me why. If so it's each other, it won't do as any good."
+                    content="If it’s bad, please tell me. If it’s good, tell me why. If we BS each other, it won’t do us any good."
                   />
                 </ContentSection>
 
                 <ContentSection>
                   <TextBlock 
                     title="Understanding why my work matters to the business"
-                    content="I want to understand what makes it a hard task they're trying. This clarity keeps the light on, and clear as they're paying me."
+                    content="I want to know why the business cares in what I am doing. The money keeps the light on, and after all, they’re paying me."
                   />
                 </ContentSection>
 
                 <ContentSection>
                   <TextBlock 
                     title="Show don't tell"
-                    content="It's rare what people design action speaks louder than words. In design, the prototypes usually communicate what words and all the planning."
+                    content="It's true what people say: action speaks louder than words. I've experienced it, usually anything closer to the real deal does much better than all my yapping."
                   />
                 </ContentSection>
 
                 <ContentSection>
                   <TextBlock 
                     title="A good story"
-                    content="People's attention are so valuable, yes it, and don't waste it."
+                    content="People's attention are so valuable, get it, and don't waste it."
                   />
                 </ContentSection>
 
                 <ContentSection>
                   <TextBlock 
                     title="Ongoing relationship with people I design for"
-                    content="I genuinely think it's a privilege that I get to design for people. It's just at any opportunity I can talk to people I'm designing for, discovering and then this process."
+                    content="I genuinely think it's a privilege that I get to design for people. I'll jump at any opportunity to talk to people I'm designing for."
                   />
                 </ContentSection>
 
                 <ContentSection>
                   <TextBlock 
-                    title="Strong relationship with people I'm designing with, especially my PM"
-                    content="PM is the leader, engineer actually make things happen. As a designer, I feel like the middle man sometimes. I want to build, and I also want to build the thing. This can lead to conflict, I've tried but I realized I need my partners. When we do not rule well, the product outcomes are solid. Yeah, so I want good those relationships."
+                    title="Strong relaionship with my PM and engineering partners"
+                    content="The outcome of a product is directly related with how well the triad works. I learn a lot from them,
+                    and it makes buiding so much more enjoyable."
                   />
                 </ContentSection>
               </div>
