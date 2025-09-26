@@ -122,21 +122,23 @@ const PortfolioGrid = () => {
                   data-oid="zf.jo65"
                 >
                   <WorkCard {...projects[projectIndex]} data-oid="skt8sfd" />
-                  {projectIndex === 3 && (
-                    <div className="mt-8 text-center">
-                      <h2 className="font-rubik-mono-one text-[36px] text-fg-1 mb-2">
-                        Reels
-                      </h2>
-                      <p className="text-caption-1 text-fg-2">
-                        Interactive video experiences
-                      </p>
-                    </div>
-                  )}
                 </div>
               );
             })}
           </div>
         ))}
+      </div>
+      
+      {/* Reels Section Header */}
+      <div className="w-full px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-12">
+        <div className="text-center">
+          <h2 className="font-rubik-mono-one text-[36px] text-fg-1 mb-2">
+            Reels
+          </h2>
+          <p className="text-caption-1 text-fg-2 uppercase">
+            CASE STUDIES COMING SOON
+          </p>
+        </div>
       </div>
     </section>
   );
