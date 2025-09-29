@@ -97,8 +97,7 @@ const CopilotCanvasCaseStudy = ({ currentProjectTitle = "Copilot on Canvas" }: C
                 <ContentSection>
                   <TextBlock 
                     title="The Copilot experience on the side pane wasn't intuitive for users in adopting to their workflows"
-                    content={`We had an integration on the side as a chat, but we heard from user feedback that it felt disconnected, and they had to find it to use it. We wanted to meet them where they're at - right on the canvas.
-                              We wanted to create more value for users with AI. Capturing ideas, brainstorming, editing their content were things LLMs are good at. The side pane made it more cumbersome, we wanted to design an easier way for them to experience this value in their workflow.`}
+                    content={`We had an integration on the side as a chat, but we heard from user feedback that it felt disconnected, and they had to find it to use it. We wanted to meet them where they're at - right on the canvas. Capturing ideas, brainstorming, editing their content were things LLMs are good at. The side pane made it more cumbersome, we wanted to design an easier way for them to experience this value in their workflow.`}
                   />
                   <TextBlock 
                     title="From a business perspective, this was needed to help increase adoption of Copilot, thereby increasing paying customers"
