@@ -65,7 +65,7 @@ const About = () => {
 
             {/* Middle Image (Current) */}
             <img 
-              src="/assets/aboutme/menow.jpg"
+              src="/assets/aboutme/menow.jpeg"
               alt="Current Photo"
               onClick={() => handleImageClick(1)}
               className={`absolute aspect-[368/481] w-[368px] rounded-lg cursor-pointer transition-all duration-500 ease-out origin-center object-cover ${
@@ -108,7 +108,7 @@ const About = () => {
                       content="Born and raised in Nigeria, but now based in New York City area. Recently got married, love working out but currently have an obsession with basketball. Ran a photography business in the past."
                     />
                     <TextBlock 
-                      content="5 years of experience in product design. 4+ years at Microsoft. Currently focused on building AI experiences for Microsoft Copilot."
+                      content="5 years of experience in product design. Currently at Microsoft, focused on building the creative AI experiences for Microsoft Copilot."
                     />
                   </div>
                 </ContentSection>
