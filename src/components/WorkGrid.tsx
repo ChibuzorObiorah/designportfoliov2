@@ -15,10 +15,10 @@ const PortfolioGrid = () => {
   const [showGrid, setShowGrid] = useState(false);
 
   useEffect(() => {
-    // Show grid with minimal delay for immediate responsiveness
+    // Show grid with reduced delay for better responsiveness
     const timer = setTimeout(() => {
       setShowGrid(true);
-    }, 100);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);
