@@ -20,13 +20,25 @@ const App = () => {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [showNavbar, setShowNavbar] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Set client-side flag first
+    setIsClient(true);
     // Show content immediately
     setShowNavbar(true);
     setShowContent(true);
     setIsInitialLoad(false);
   }, []);
+
+  // During SSR, render minimal structure
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-bg-1">
+        <div className="pt-[88px]" />
+      </div>
+    );
+  }
 
   return (
     <QueryClientProvider client={queryClient} data-oid="0zkk101">
