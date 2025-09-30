@@ -76,7 +76,7 @@ export function WorkCard({
 
       {/* Content - only visible on hover */}
       <div
-        className="absolute inset-0 flex flex-col gap-3 items-start justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="absolute bottom-0 left-0 w-[60%] flex flex-col gap-3 items-start justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         data-oid="wp2aqee"
       >
         {/* Labeling */}
