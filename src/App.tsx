@@ -22,16 +22,10 @@ const App = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Show loading sequence for everyone
-    const slideInTimer = setTimeout(() => {
-      setShowNavbar(true);
-      setShowContent(true);
-      setIsInitialLoad(false);
-    }, 2500); // Show navbar and content after description dissolves in
-
-    return () => {
-      clearTimeout(slideInTimer);
-    };
+    // Show content immediately
+    setShowNavbar(true);
+    setShowContent(true);
+    setIsInitialLoad(false);
   }, []);
 
   return (
