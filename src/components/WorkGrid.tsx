@@ -55,16 +55,16 @@ const PortfolioGrid = () => {
                 let widthClass = "w-full";
                 if (row.length > 1) {
                   if (rowIndex === 0 && projectIndex === 4) {
-                    // Project 4 takes 60% width
+                    // Project 4 (left) takes 60% width
                     widthClass = "w-[60%]";
                   } else if (rowIndex === 0 && projectIndex === 6) {
-                    // Project 6 takes 40% width
+                    // Project 6 (right) takes 40% width
                     widthClass = "w-[40%]";
                   } else if (rowIndex === 1 && projectIndex === 7) {
-                    // Project 7 takes 40% width
+                    // Project 7 (left) takes 40% width
                     widthClass = "w-[40%]";
                   } else if (rowIndex === 1 && projectIndex === 3) {
-                    // Project 3 takes 60% width
+                    // Project 3 (right) takes 60% width
                     widthClass = "w-[60%]";
                   } else {
                     // Other multi-item rows use equal width
