@@ -72,7 +72,7 @@ export function WorkCard({
       </div>
 
       {/* Dark overlay - only visible on hover */}
-      <div className="absolute bottom-0 left-0 w-[60%] h-full bg-bg-1 opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-xl" />
+      <div className="absolute inset-0 bg-bg-1 opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-xl" />
 
       {/* Content - only visible on hover */}
       <div

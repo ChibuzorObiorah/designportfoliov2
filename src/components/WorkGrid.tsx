@@ -24,12 +24,12 @@ const PortfolioGrid = () => {
 
   return (
     <section
-      className={`w-full px-[40px] sm:px-[56px] md:px-[72px] lg:px-[84px] py-6 transition-all duration-1000 ease-out ${
+      className={`w-full px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-6 transition-all duration-1000 ease-out ${
         showGrid ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       data-oid="hvnhpbb"
     >
-      <div className="w-full max-w-[1400px] mx-auto" data-oid="r9c34h1">
+      <div className="w-full mx-auto" data-oid="r9c34h1">
         {gridLayout.map((row, rowIndex) => (
           <div key={rowIndex}>
             {/* Add Reels header before the third row (index 2) */}
