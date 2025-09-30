@@ -6,8 +6,8 @@ import { allProjects } from "@/data/projects";
 const gridLayout = [
   [4, 6],
   [7, 3],
-  [5, 0],
-  [0, 2],
+  [2, 0],
+  [1, 5],
 ];
 
 const PortfolioGrid = () => {
@@ -24,12 +24,12 @@ const PortfolioGrid = () => {
 
   return (
     <section
-      className={`w-full px-[36px] sm:px-[52px] md:px-[68px] lg:px-[80px] py-6 transition-all duration-1000 ease-out ${
+      className={`w-full px-[56px] sm:px-[72px] md:px-[88px] lg:px-[100px] py-6 transition-all duration-1000 ease-out ${
         showGrid ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       data-oid="hvnhpbb"
     >
-      <div className="w-full mx-auto" data-oid="r9c34h1">
+      <div className="w-full max-w-[1400px] mx-auto" data-oid="r9c34h1">
         {gridLayout.map((row, rowIndex) => (
           <div key={rowIndex}>
             {/* Add Reels header before the third row (index 2) */}
@@ -66,6 +66,18 @@ const PortfolioGrid = () => {
                   } else if (rowIndex === 1 && projectIndex === 3) {
                     // Project 3 takes 60% width
                     widthClass = "w-[60%]";
+                  } else if (rowIndex === 2 && projectIndex === 5) {
+                    // Project 5 takes 60% width
+                    widthClass = "w-[60%]";
+                  } else if (rowIndex === 2 && projectIndex === 0) {
+                    // Project 0 takes 40% width
+                    widthClass = "w-[40%]";
+                  } else if (rowIndex === 3 && projectIndex === 2) {
+                    // Project 2 takes 60% width
+                    widthClass = "w-[60%]";
+                  } else if (rowIndex === 3 && projectIndex === 1) {
+                    // Project 1 takes 40% width
+                    widthClass = "w-[40%]";
                   } else {
                     // Other multi-item rows use equal width
                     widthClass = "flex-1";

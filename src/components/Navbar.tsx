@@ -98,7 +98,7 @@ const Navbar = ({ state = "Rest" }: NavbarProps) => {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="flex items-center justify-between px-[36px] sm:px-[52px] md:px-[68px] lg:px-[80px] py-6 relative w-full mx-auto">
+      <div className="flex items-center justify-between px-[56px] sm:px-[72px] md:px-[88px] lg:px-[100px] py-6 relative w-full mx-auto">
         {/* Logo glass container */}
         <div className="glass-container">
           {logo}
