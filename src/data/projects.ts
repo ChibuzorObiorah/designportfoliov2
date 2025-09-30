@@ -21,9 +21,9 @@ export const allProjects: Project[] = [
     // caseStudyLink: "/tidyup-case-study", // Disabled - page not ready
   },
   {
-    title: "Upscale in Designer",
+    title: "Upscale in Copilot",
     description:
-      "Designed anAI-powered image enhancement tool in one click - resulting in high engagement with users",
+      "Designed an AI-powered image enhancement tool in one click, resulting in high engagement with users",
     videoSrc: "/assets/upscale/upscale-prototype.mp4",
     // caseStudyLink: "/upscale-case-study", // Disabled - page not ready
   },
