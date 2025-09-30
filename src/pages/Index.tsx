@@ -35,7 +35,7 @@ const Index = ({ isInitialLoad }: IndexProps) => {
   }, [isInitialLoad]);
 
   return (
-    <div className="min-h-screen bg-colors-bg-1 font-ibm-plex">
+    <div className="min-h-screen bg-bg-1 font-ibm-plex">
       {/* Hero Section with Particle Animation */}
       <section className="w-full h-[60vh] relative overflow-hidden">
         {/* Particle Animation with dissolve effect */}
