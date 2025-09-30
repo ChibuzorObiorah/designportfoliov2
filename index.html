@@ -8,6 +8,53 @@
     <meta name="author" content="Chibuzor" />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wdth,wght@0,75,100..700;1,75,100..700&family=Rubik+Mono+One&display=swap');
+      
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #0a0a0a;
+        color: #ffffff;
+        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+      
+      #loading-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-size: 18px;
+        color: #888;
+      }
+      
+      .noscript-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        text-align: center;
+      }
+      
+      .noscript-container h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: #ffffff;
+      }
+      
+      .noscript-container p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #aaa;
+        margin-bottom: 24px;
+      }
+      
+      .noscript-container a {
+        color: #3b82f6;
+        text-decoration: none;
+      }
+      
+      .noscript-container a:hover {
+        text-decoration: underline;
+      }
     </style>
 
     
@@ -38,7 +85,32 @@
 </head>
 
   <body>
+    <noscript>
+      <div class="noscript-container">
+        <h1>Chibuzor</h1>
+        <p>Design Portfolio</p>
+        <p>
+          This portfolio requires JavaScript to display interactive content.
+          Please enable JavaScript in your browser to view the full experience.
+        </p>
+        <p>
+          For inquiries, please contact via email or LinkedIn.
+        </p>
+      </div>
+    </noscript>
+    
+    <div id="loading-fallback">Loading portfolio...</div>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Hide loading message once React loads
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadingEl = document.getElementById('loading-fallback');
+        if (loadingEl && document.getElementById('root').children.length > 0) {
+          loadingEl.style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
