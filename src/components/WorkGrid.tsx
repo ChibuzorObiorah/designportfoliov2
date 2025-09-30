@@ -6,9 +6,8 @@ import { allProjects } from "@/data/projects";
 const gridLayout = [
   [4, 6],
   [7, 3],
-  [5],
-  [0, 1],
-  [2],
+  [5, 0],
+  [0, 2],
 ];
 
 const PortfolioGrid = () => {
