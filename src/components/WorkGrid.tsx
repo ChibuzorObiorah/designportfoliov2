@@ -24,7 +24,7 @@ const PortfolioGrid = () => {
 
   return (
     <section
-      className={`w-full px-[16px] sm:px-[32px] md:px-[48px] lg:px-[60px] py-6 transition-all duration-1000 ease-out ${
+      className={`w-full px-[36px] sm:px-[52px] md:px-[68px] lg:px-[80px] py-6 transition-all duration-1000 ease-out ${
         showGrid ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       data-oid="hvnhpbb"
