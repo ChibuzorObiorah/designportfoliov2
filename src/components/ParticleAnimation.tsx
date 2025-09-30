@@ -6,8 +6,15 @@ export default function ParticleAnimation() {
   const mousePositionRef = useRef({ x: 0, y: 0 });
   const isTouchingRef = useRef(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // SSR guard - only render on client
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
+    if (!isClient) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -207,7 +214,11 @@ export default function ParticleAnimation() {
       }
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isMobile]);
+  }, [isMobile, isClient]);
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <div className="relative w-full h-full overflow-hidden" data-oid=":urvz.:">

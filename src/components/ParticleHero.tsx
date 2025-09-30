@@ -9,9 +9,16 @@ export default function ParticleHero() {
   const [fontLoaded, setFontLoaded] = useState(false);
   const [canvasSupported, setCanvasSupported] = useState(true);
   const [showFallback, setShowFallback] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // SSR guard - only render on client
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Canvas feature detection
   useEffect(() => {
+    if (!isClient) return;
     function detectCanvasSupport() {
       try {
         const testCanvas = document.createElement('canvas');
@@ -33,10 +40,10 @@ export default function ParticleHero() {
     }
 
     detectCanvasSupport();
-  }, []);
+  }, [isClient]);
 
   useEffect(() => {
-    if (!canvasSupported) return;
+    if (!canvasSupported || !isClient) return;
     
     // Reduced font loading timeout with better fallbacks
     let isMounted = true;
@@ -68,10 +75,10 @@ export default function ParticleHero() {
       isMounted = false;
       clearTimeout(fontLoadTimeout);
     };
-  }, [canvasSupported]);
+  }, [canvasSupported, isClient]);
 
   useEffect(() => {
-    if (!fontLoaded || !canvasSupported) return;
+    if (!fontLoaded || !canvasSupported || !isClient) return;
     
     console.log('Initializing canvas...');
     const canvas = canvasRef.current;
@@ -301,10 +308,10 @@ export default function ParticleHero() {
       }
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isMobile, fontLoaded, canvasSupported]);
+  }, [isMobile, fontLoaded, canvasSupported, isClient]);
 
-  // Show fallback if Canvas is not supported or failed
-  if (showFallback || !canvasSupported) {
+  // Show fallback during SSR, if Canvas is not supported, or failed
+  if (!isClient || showFallback || !canvasSupported) {
     return <StaticHero isMobile={isMobile} />;
   }
 
