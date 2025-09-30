@@ -22,27 +22,16 @@ const App = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Check if this is the first time loading the app
-    const hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore');
-    
-    if (hasLoadedBefore) {
-      // If user has loaded before, show everything immediately
-      setIsInitialLoad(false);
+    // Show loading sequence for everyone
+    const slideInTimer = setTimeout(() => {
       setShowNavbar(true);
       setShowContent(true);
-    } else {
-      // First time load - show loading sequence
-      const slideInTimer = setTimeout(() => {
-        setShowNavbar(true);
-        setShowContent(true);
-        setIsInitialLoad(false);
-        sessionStorage.setItem('hasLoadedBefore', 'true');
-      }, 2500); // Show navbar and content after description dissolves in
+      setIsInitialLoad(false);
+    }, 2500); // Show navbar and content after description dissolves in
 
-      return () => {
-        clearTimeout(slideInTimer);
-      };
-    }
+    return () => {
+      clearTimeout(slideInTimer);
+    };
   }, []);
 
   return (
