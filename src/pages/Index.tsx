@@ -9,7 +9,7 @@ interface IndexProps {
 
 const Index = ({ isInitialLoad }: IndexProps) => {
   // Show content immediately with fade-in animations
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(true); // Changed to true for SSR
 
   useEffect(() => {
     setMounted(true);
