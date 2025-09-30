@@ -38,6 +38,103 @@
 </head>
 
   <body>
+    <noscript>
+      <style>
+        body { margin: 0; padding: 0; background-color: #020b0d; color: #ffffff; font-family: 'IBM Plex Sans', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .header { text-align: center; margin-bottom: 3rem; padding: 2rem 0; }
+        .header h1 { font-size: 48px; font-weight: 600; color: #fff84c; font-family: 'IBM Plex Sans Condensed', sans-serif; margin: 0 0 1rem 0; }
+        .header p { font-size: 18px; color: #bdbdbd; margin: 0; }
+        .warning { background-color: #242424; padding: 1.5rem; border-radius: 8px; margin-bottom: 3rem; border-left: 4px solid #fff84c; }
+        .warning h2 { color: #fff84c; margin-top: 0; font-size: 20px; }
+        .warning p { color: #bdbdbd; line-height: 1.6; margin: 0.5rem 0; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .project-card { background-color: #242424; padding: 1.5rem; border-radius: 8px; }
+        .project-card h3 { color: #ffffff; font-size: 20px; font-weight: 600; margin: 0 0 1rem 0; font-family: 'IBM Plex Sans Condensed', sans-serif; }
+        .project-card p { color: #bdbdbd; line-height: 1.6; margin: 0 0 1rem 0; font-size: 14px; }
+        .project-badge { display: inline-block; background-color: #404040; color: #fff84c; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .section { margin-bottom: 3rem; }
+        .section h2 { color: #fff84c; font-size: 28px; font-weight: 600; margin-bottom: 1.5rem; font-family: 'IBM Plex Sans Condensed', sans-serif; }
+        .footer { text-align: center; padding: 2rem 0; border-top: 1px solid #404040; color: #707070; font-size: 14px; }
+      </style>
+      <div class="container">
+        <div class="header">
+          <h1>Chibuzor</h1>
+          <p>Product Designer | Design Portfolio</p>
+        </div>
+
+        <div class="warning">
+          <h2>⚠️ JavaScript Required for Full Experience</h2>
+          <p>This portfolio is best viewed with JavaScript enabled. Below is a summary of my work. For the full interactive experience with videos and detailed case studies, please enable JavaScript or try accessing from a different network/device.</p>
+        </div>
+
+        <div class="section">
+          <h2>Featured Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>Shortcutter.io</h3>
+              <p>Built a game to help users master keyboard shortcuts through muscle memory, to make learning efficient, and fun.</p>
+            </div>
+            
+            <div class="project-card">
+              <h3>Tidy up for OneNote Canvas</h3>
+              <p>Designed a one-click feature to tidy up the OneNote canvas, to help users realize value with AI with less effort.</p>
+            </div>
+
+            <div class="project-card">
+              <h3>Upscale in Copilot</h3>
+              <p>Designed an AI-powered image enhancement tool in one click, resulting in high engagement with users.</p>
+            </div>
+
+            <div class="project-card">
+              <h3>Copilot Scoping in OneNote</h3>
+              <p>Helping users understand the scope of LLMs in OneNote, increasing user adoption and satisfaction.</p>
+              <span class="project-badge">CASE STUDY AVAILABLE</span>
+            </div>
+
+            <div class="project-card">
+              <h3>Copilot on Canvas</h3>
+              <p>Crafted an engaging Copilot experience on OneNote Canvas, significantly boosting user adoption.</p>
+              <span class="project-badge">CASE STUDY AVAILABLE</span>
+            </div>
+
+            <div class="project-card">
+              <h3>Visualis</h3>
+              <p>Built a web app that transforms written stories into visually consistent, cinematic image sequences using OpenAI API.</p>
+            </div>
+
+            <div class="project-card">
+              <h3>iOS Home in OneNote</h3>
+              <p>Designed the OneNote iOS app to make it easy for users to capture and retrieve notes faster, increasing usage and retention.</p>
+              <span class="project-badge">CASE STUDY AVAILABLE</span>
+            </div>
+
+            <div class="project-card">
+              <h3>ThredUp Checkout</h3>
+              <p>Revamped the checkout process for the Thredup app to significantly decrease the drop-off rate.</p>
+              <span class="project-badge">CASE STUDY AVAILABLE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Skills & Expertise</h2>
+          <p style="color: #bdbdbd; line-height: 1.8;">
+            • Product Design & UX/UI Design<br>
+            • AI/ML Product Design<br>
+            • Mobile App Design (iOS)<br>
+            • Interaction Design & Prototyping<br>
+            • User Research & Testing<br>
+            • Design Systems
+          </p>
+        </div>
+
+        <div class="footer">
+          <p>For the best experience and to view detailed case studies with videos and prototypes, please enable JavaScript.</p>
+          <p>© 2025 Chibuzor. All rights reserved.</p>
+        </div>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
