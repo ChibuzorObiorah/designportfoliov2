@@ -70,3 +70,7 @@
 .chart-tooltip-indicator[data-border] {
   border-color: attr(data-border color, #000);
 }
+
+.hero-glow {
+  text-shadow: 0 0 20px rgba(255, 248, 76, 0.3), 0 0 40px rgba(255, 248, 76, 0.2);
+}

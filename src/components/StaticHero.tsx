@@ -40,16 +40,11 @@ export default function StaticHero({ isMobile = false }: StaticHeroProps) {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center bg-[#020b0d]">
       <div 
-        className={`transition-opacity duration-500 ${fontLoaded ? 'opacity-100' : 'opacity-0'}`}
-        style={{
-          fontFamily: "'Rubik Mono One', 'Courier New', monospace",
-          fontSize: isMobile ? '50px' : '100px',
-          fontWeight: 900,
-          color: 'white',
-          textAlign: 'center',
-          textShadow: '0 0 20px rgba(255, 248, 76, 0.3), 0 0 40px rgba(255, 248, 76, 0.2)',
-          letterSpacing: '0.05em',
-        }}
+        className={`transition-opacity duration-500 font-['Rubik_Mono_One'] font-black text-white text-center tracking-wider hero-glow ${
+          fontLoaded ? 'opacity-100' : 'opacity-0'
+        } ${
+          isMobile ? 'text-[50px]' : 'text-[100px]'
+        }`}
       >
         CHIBUZOR
       </div>
