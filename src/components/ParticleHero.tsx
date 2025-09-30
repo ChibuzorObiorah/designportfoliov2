@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import StaticHero from "./StaticHero";
 
 export default function ParticleHero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -6,14 +7,43 @@ export default function ParticleHero() {
   const isTouchingRef = useRef(false);
   const [isMobile, setIsMobile] = useState(false);
   const [fontLoaded, setFontLoaded] = useState(false);
+  const [canvasSupported, setCanvasSupported] = useState(true);
+  const [showFallback, setShowFallback] = useState(false);
+
+  // Canvas feature detection
+  useEffect(() => {
+    function detectCanvasSupport() {
+      try {
+        const testCanvas = document.createElement('canvas');
+        const testCtx = testCanvas.getContext('2d');
+        if (!testCtx) {
+          console.warn('Canvas 2D context not available, using fallback');
+          setCanvasSupported(false);
+          setShowFallback(true);
+          return false;
+        }
+        console.log('Canvas support detected');
+        return true;
+      } catch (e) {
+        console.warn('Canvas detection failed:', e);
+        setCanvasSupported(false);
+        setShowFallback(true);
+        return false;
+      }
+    }
+
+    detectCanvasSupport();
+  }, []);
 
   useEffect(() => {
-    // Wait for the font to load before running the canvas logic
+    if (!canvasSupported) return;
+    
+    // Reduced font loading timeout with better fallbacks
     let isMounted = true;
     const fontLoadTimeout = setTimeout(() => {
-      console.log('Font load timeout, proceeding anyway');
+      console.log('Font load timeout (1s), proceeding with fallback fonts');
       if (isMounted) setFontLoaded(true);
-    }, 3000); // 3 second timeout
+    }, 1000); // Reduced to 1 second timeout
     
     async function loadFontAndStart() {
       console.log('Starting font load...');
@@ -26,7 +56,7 @@ export default function ParticleHero() {
           setFontLoaded(true);
         }
       } catch (e) {
-        console.warn('Font loading failed, proceeding anyway:', e);
+        console.warn('Font loading failed, using system fallback:', e);
         if (isMounted) {
           clearTimeout(fontLoadTimeout);
           setFontLoaded(true);
@@ -38,23 +68,33 @@ export default function ParticleHero() {
       isMounted = false;
       clearTimeout(fontLoadTimeout);
     };
-  }, []);
+  }, [canvasSupported]);
 
   useEffect(() => {
-    if (!fontLoaded) return;
+    if (!fontLoaded || !canvasSupported) return;
+    
     console.log('Initializing canvas...');
     const canvas = canvasRef.current;
     if (!canvas) {
-      console.error('Canvas not found');
+      console.error('Canvas element not found, switching to fallback');
+      setShowFallback(true);
       return;
     }
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) {
-      console.error('Canvas context not available');
+    let ctx: CanvasRenderingContext2D | null = null;
+    try {
+      ctx = canvas.getContext("2d");
+      if (!ctx) {
+        console.error('Canvas 2D context not available, switching to fallback');
+        setShowFallback(true);
+        return;
+      }
+      console.log('Canvas initialized successfully');
+    } catch (e) {
+      console.error('Canvas context creation failed:', e);
+      setShowFallback(true);
       return;
     }
-    console.log('Canvas initialized successfully');
 
     const updateCanvasSize = () => {
       canvas.width = window.innerWidth;
@@ -84,7 +124,8 @@ export default function ParticleHero() {
       ctx.save();
 
       const textSize = isMobile ? 50 : 100;
-      ctx.font = `900 ${textSize}px 'Rubik Mono One', monospace`;
+      // Enhanced font fallback stack
+      ctx.font = `900 ${textSize}px 'Rubik Mono One', 'Courier New', 'Monaco', 'Menlo', monospace`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
@@ -260,7 +301,12 @@ export default function ParticleHero() {
       }
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isMobile, fontLoaded]);
+  }, [isMobile, fontLoaded, canvasSupported]);
+
+  // Show fallback if Canvas is not supported or failed
+  if (showFallback || !canvasSupported) {
+    return <StaticHero isMobile={isMobile} />;
+  }
 
   return (
     <div
