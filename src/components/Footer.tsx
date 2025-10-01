@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/textured-footer.css";
-import footerTexture from "/footer-img/textured-footer.png";
+import footerTexture from "/footer-img/Textured-footer.png";
 
 // Textured Footer Component - Using provided image
 const TexturedFooter = () => {
