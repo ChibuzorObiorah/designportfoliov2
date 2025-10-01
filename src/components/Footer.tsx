@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/textured-footer.css";
-import footerTexture from "/footer-img/textured-footer.png";
 
 // Textured Footer Component - Using provided image
 const TexturedFooter = () => {
@@ -13,7 +12,7 @@ const TexturedFooter = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${footerTexture})`
+          backgroundImage: `url(/footer-img/Textured-footer.png)`
         }}
         data-name="Texture-img"
       />
