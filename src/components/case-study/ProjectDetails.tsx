@@ -15,12 +15,12 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 }) => {
   const DetailItem = ({ label, value }: { label: string; value: string }) => (
     <div className={`flex flex-col gap-2 items-start relative shrink-0 ${className}`}>
-      <div className="font-['IBM_Plex_Mono'] font-medium text-fg-3 text-[12px] tracking-[-0.24px] uppercase">
-        <p className="leading-[18px] whitespace-pre">{label}</p>
+      <div className="text-caption-2 text-fg-3 uppercase">
+        <p className="whitespace-pre">{label}</p>
       </div>
       <div className="flex flex-col gap-1 items-start relative shrink-0">
-        <div className="font-['IBM_Plex_Sans'] text-[14px] text-fg-1 w-full">
-          <p className="leading-[20px]">{value}</p>
+        <div className="text-body-1 text-fg-1 w-full">
+          <p>{value}</p>
         </div>
       </div>
     </div>

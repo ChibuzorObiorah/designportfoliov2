@@ -20,22 +20,11 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'ibm-plex': ['IBM Plex Sans', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
 				'ibm-plex-mono': ['IBM Plex Mono', 'monospace'],
-				'ibm-plex-condensed': ['IBM Plex Sans Condensed', 'sans-serif'],
 				'rubik-mono-one': ['Rubik Mono One', 'monospace'],
-				sans: ['IBM Plex Sans', 'sans-serif'],
+				sans: ['Inter', 'sans-serif'],
 			},
-			fontSize: {
-				'display': ['68px', { lineHeight: '92px', fontWeight: '700' }],
-				'title-1': ['48px', { lineHeight: '64px', fontWeight: '600' }],
-				'title-2': ['36px', { lineHeight: '48px', fontWeight: '600' }],
-				'title-3': ['24px', { lineHeight: '32px', fontWeight: '600' }],
-				'subtitle-1': ['16px', { lineHeight: '100%', fontWeight: '600' }],
-				'body-1': ['16px', { lineHeight: '22px', fontWeight: '400' }],
-				'caption-1': ['14px', { lineHeight: '100%', fontWeight: '600' }],
-				'caption-2': ['12px', { lineHeight: '18px', fontWeight: '500' }],
-			},		
 
 			colors: {
 				'bg-1': '#020b0d',
