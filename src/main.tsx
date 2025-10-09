@@ -1,4 +1,4 @@
-import { createRoot, hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import ErrorBoundary from "./components/ErrorBoundary";
 import "./index.css";
@@ -11,8 +11,4 @@ const WrappedApp = () => (
   </ErrorBoundary>
 );
 
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, <WrappedApp />);
-} else {
-  createRoot(rootElement).render(<WrappedApp />);
-}
+createRoot(rootElement).render(<WrappedApp />);
