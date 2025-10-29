@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
+import NetworkStatus from "./components/NetworkStatus";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import IOSHomeCaseStudy from "./pages/ioshome-CaseStudy";
@@ -35,6 +36,7 @@ const App = () => {
         <Sonner data-oid="mgzqa5." />
         <BrowserRouter data-oid="agrlr61">
           <ScrollToTop />
+          <NetworkStatus />
           <div className="min-h-screen bg-bg-1">
             {/* Fixed navbar that handles its own animations */}
             {showNavbar && <Navbar />}
