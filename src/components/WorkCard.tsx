@@ -53,14 +53,14 @@ export function WorkCard({
             <img
               src={videoSrc}
               alt={videoAlt}
-              className="w-full h-full object-cover transform scale-105 group-hover:blur-sm transition-all duration-300"
+              className="w-full h-full object-cover transform scale-105 transition-all duration-300"
               data-oid="ny_c509"
             />
           ) : (
             <video
               src={videoSrc}
               aria-label={videoAlt}
-              className="w-full h-full object-cover transform scale-105 group-hover:blur-sm transition-all duration-300"
+              className="w-full h-full object-cover transform scale-105 transition-all duration-300"
               autoPlay
               loop
               muted
@@ -71,8 +71,16 @@ export function WorkCard({
         )}
       </div>
 
-      {/* Dark overlay - only visible on hover */}
-      <div className="absolute inset-0 bg-bg-1 opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-xl" />
+      {/* Progressive blur overlay - only visible on hover */}
+      <div 
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"
+        style={{
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+          WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+        }}
+      />
 
       {/* Content - only visible on hover */}
       <div
