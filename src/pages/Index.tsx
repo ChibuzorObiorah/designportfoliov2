@@ -31,10 +31,10 @@ const Index = ({ isInitialLoad }: IndexProps) => {
         <div className={`text-center space-y-2 transition-all duration-700 ease-out ${
           mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}>
-          <p className="font-['IBM_Plex_Mono'] text-[12px] sm:text-[14px] md:text-[16px] text-fg-2 tracking-[-0.24px] uppercase">
+          <p className="font-ibm-plex-mono text-[12px] sm:text-[14px] md:text-[16px] text-fg-2 tracking-[-0.24px] uppercase">
             PRODUCT DESIGNER AT MICROSOFT, IN NYC
           </p>
-          <p className="font-['IBM_Plex_Mono'] text-[12px] sm:text-[14px] md:text-[16px] text-fg-2 tracking-[-0.24px] uppercase">
+          <p className="font-ibm-plex-mono text-[12px] sm:text-[14px] md:text-[16px] text-fg-2 tracking-[-0.24px] uppercase">
             MOST ENERGIZED WHEN ALIGNED TO THE MISSION
           </p>
         </div>
