@@ -82,6 +82,14 @@ export function WorkCard({
         }}
       />
 
+      {/* Dark gradient overlay for text readability - only visible on hover */}
+      <div 
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"
+        style={{
+          background: 'linear-gradient(to top, rgba(2, 11, 13, 0.7) 0%, rgba(2, 11, 13, 0.4) 30%, rgba(2, 11, 13, 0) 60%)'
+        }}
+      />
+
       {/* Content - only visible on hover */}
       <div
         className="absolute bottom-0 left-0 w-full flex flex-col gap-3 items-start justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
